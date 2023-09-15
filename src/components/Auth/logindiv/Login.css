@@ -1,0 +1,6 @@
+.rot{
+    rotate: 180deg;
+    transition: all 350ms;
+    background-color: #1d252f38;
+    
+}

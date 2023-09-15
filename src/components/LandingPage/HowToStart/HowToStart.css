@@ -1,0 +1,477 @@
+.main2{
+    width: 100%;
+    height: max-content;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5%;
+}
+
+.mainwrap{
+    width: 95%;
+    height: 100%;
+    /* background-color: green; */
+}
+
+.mainHeader{
+    width: 100%;
+    height: 35%;
+    /* background-color: aliceblue; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 50px;
+}
+
+.mainHeader h2{
+    color: black;
+    font: 36px inter, arial, sans-serif;
+    font-weight: 600;
+}
+
+.mainHeader p{
+    color: #1d252fb3;
+    font: 16px inter, arial, sans-serif;
+}
+
+.mainSteps{
+    width: 100%;
+    height: 65%;
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: column;
+}
+
+.mainWraps{
+    width: 100%;
+    height: 100%;
+    /* background-color: green; */
+}
+
+.startSteps{
+    width: 100%;
+    height: 20%;
+    /* background-color: rgb(244, 244, 191); */
+    display: flex;
+    align-items: center;
+}
+
+.step1{
+    width: 75px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: #D2E057;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step1 span{
+    font: 16px inter, arial, sans-serif;
+    color: #000000;
+    font-weight: 500;
+}
+
+.startSteps p{
+    color: #1d252fb3;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.stepsInfo {
+    width: 100%;
+    height: 50%;
+    /* background-color: blue; */
+    display: flex;
+}
+
+.stepsInfoWrap{
+    width: 100%;
+    height: 100%;
+    /* background-color: gray; */
+    display: flex;
+    gap: 20px;
+}
+
+.stepInfoWrapText{
+    width: 31.5%;
+    height: 100%;
+    /* background-color: aliceblue; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.stepInfoWrapText3{
+    width: 29%;
+    height: 100%;
+    /* background-color: aliceblue; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.stepInfoWrapText3 p{
+    width: 88%;
+    font: 20px inter, arial, sans-serif;
+    color: #000000;
+    line-height: 30px;
+}
+
+.stepInfoWrapText3 span{
+    width: 95%;
+    font: 16px inter, arial, sans-serif;
+    color: #1d252fb3;
+    line-height: 25px;
+    /* background-color: blue; */
+}
+
+.stepInfoWrapText p{
+    width: 70%;
+    font: 20px inter, arial, sans-serif;
+    color: #000000;
+}
+
+.stepInfoWrapText span{
+    width: 88%;
+    font: 16px inter, arial, sans-serif;
+    color: #1d252fb3;
+    line-height: 25px;
+}
+
+.stepsInfo2{
+    /* width: 25%; */
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stepsInfoBox{
+    width: 100%;
+    height: max-content;
+    background-color: yellow;
+    /* border-radius: 20px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.stepsInfoBoxText{
+    width: 100%;
+    height: 70%;
+    background-color: #F0F2F4;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.stepsInfoBoxText p{
+    font: 18px inter, arial, sans-serif;
+    color: #000000;
+}
+
+.stepsInfoBoxText .CryptoInfo{
+    font: 16px inter, arial, sans-serif;
+    color: #1d252fb3;
+    line-height: 25px;
+    padding-top: 10px;
+}
+
+.stepsInfoBoxButton{
+    width: 90%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ button{
+    width: 100%;
+    height: 50px;
+    background-color: #EABE4D;
+    border: none;
+    border-radius: 7px;
+}
+
+@media screen and (max-width: 1268px) {
+    .main2{
+        width: 100%;
+        /* background-color: red; */
+        height: 90vh;
+        /* background-color: rgb(23, 23, 23); */
+        display: flex;
+        justify-content: center;
+    }
+
+    .mainwrap{
+        width: 86%;
+        height: 100%;
+        /* display: flex; */
+        flex-direction: column;
+        gap: 20px;
+        /* background-color: yellow; */
+    }
+
+    .mainHeader{
+        width: 100%;
+        height: 30%;
+        /* background-color: aliceblue; */
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 50px;
+    }
+
+    .mainHeader p{
+        /* background-color: pink; */
+        font: 17px inter, arial, sans-serif;
+    }
+
+    .mainSteps{
+        width: 100%;
+        height: 70%;
+        /* background-color: pink; */
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .mainWraps{
+        width: 95%;
+        height: 100%;
+        /* background-color: green; */
+    }
+
+    .startSteps{
+        width: 100%;
+        height: 20%;
+        /* background-color: rgb(244, 244, 191); */
+        display: flex;
+        align-items: center;
+    }
+
+    .Step1P{
+        display: none;
+    }
+
+    .step1{
+        width: 80px;
+        height: 30px;
+        border-radius: 30px;
+        /* background-color: #D2E057; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .step1 span{
+        font: 16px inter, arial, sans-serif;
+        color: #000000;
+        font-weight: 500;
+    }
+
+    .stepsInfo2{
+        width: 100%;
+        /* background-color: yellow; */
+    }
+
+    .stepsInfoBox{
+        width: 100%;
+        /* background-color: purple; */
+        padding: 10px;
+        display: flex;
+        gap: 5px;
+    }
+
+    .stepsInfoBoxText{
+        width: 100%;
+        height: 70%;
+        /* background-color: rgb(250, 221, 168); */
+        display: flex;
+        gap: 1px;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .stepsInfoBoxText p{
+        font: 18px inter, arial, sans-serif;
+        color: #000000;
+        padding-bottom: 10px;
+    }
+    
+    .stepsInfoBoxText .CryptoInfo{
+        font: 15px inter, arial, sans-serif;
+        color: #1d252fb3;
+        line-height: 25px;
+        font-weight: 500;
+        /* padding-top: 10px; */
+    }
+
+    .stepsInfoBoxButton{
+        width: 98%;
+        background-color: aliceblue;
+        height: 3vw;
+    }
+
+    .stepsInfoBoxButton button{
+        height: 100%;
+        border-radius: 5px;
+        font-weight: 600;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .main2{
+        width: 100%;
+        height: 90vh;
+        /* background-color: rgb(116, 240, 231); */
+        /* display: flex;
+        justify-content: center; */
+    }
+
+    .mainwrap{
+        width: 93%;
+        height: 100%;
+        /* background-color: yellow; */
+    }
+
+    .mainHeader{
+        width: 100%;
+        height: 20%;
+        /* background-color: rgb(94, 169, 235); */
+        padding-top: 10px;
+    }
+
+    .mainHeader h2{
+        font-size: 25px;
+    }
+
+    .mainHeader p{
+        /* background-color: pink; */
+        font: 14px inter, arial, sans-serif;
+        line-height: 20px;
+    }
+
+    .mainSteps{
+        width: 100%;
+        height: 70%;
+        /* background-color: pink; */
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* gap: 30px; */
+    }
+
+    .mainWraps{
+        width: 95%;
+        height: 100%;
+        /* background-color: green; */
+        display: flex;
+        gap: 10px;
+    }
+
+    .startSteps{
+        width: 12%;
+        height: 100%;
+        /* background-color: rgb(244, 244, 191); */
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between; */
+        gap: 30px;
+        /* align-items: center; */
+    }
+
+    .step1{
+        width: 80px;
+        height: 20%;
+        /* height: 30px; */
+        border-radius: 30px;
+        /* background-color: blue; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* margin-top: 90px; */
+    }
+
+    .startSteps p{
+        transform: rotate(-90deg) scaleX(0.35);
+        margin-top: 5px;
+         /* transform: scaleX(0.5); */
+    }
+        
+        .startSteps .Step1P{
+        /* width: 100%; */
+        height: 100px;
+        /* background-color: rgb(237, 166, 237); */
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: rotate(-90deg) scaleX(0.4);
+        transform-origin: center;
+        /* transform: scaleX(0.5); */
+    }
+
+    .stepsInfo {
+        width: 100%;
+        height: 100%;
+        /* background-color: blue; */
+        /* flex: 0 0 auto; */
+    }
+
+    .stepsInfoWrap{
+        width: 100%;
+        height: 100%;
+        /* background-color: gray; */
+        display: flex;
+        flex-direction: column;
+        /* gap: 20px; */
+    }
+
+    .stepInfoWrapText p{
+        width: 80vw;
+        font-size: 18px;
+        margin-top: 5px;
+        /* background-color: pink; */
+        font-weight: 500;
+    }
+
+    .stepInfoWrapText3 p{
+        width: 80vw;
+        font-size: 18px;
+        /* background-color: pink; */
+        /* margin-bottom: 23px; */
+    }
+
+    .stepInfoWrapText  span{
+        /* background-color: pink; */
+        width: 77vw;
+        font-size: 14px;
+    }
+
+    .stepInfoWrapText3  span{
+        /* background-color: pink; */
+        width: 77vw;
+        font-size: 14px;
+    }
+
+    .stepsInfoBoxText p{
+        font-size: 15px;
+    }
+
+    .stepsInfoBoxButton{
+        /* background-color: red; */
+        height: 6vh;
+    }
+
+    .stepsInfoBoxButton button{
+        width: 98%;
+        font-size: 15px;
+    }
+}
