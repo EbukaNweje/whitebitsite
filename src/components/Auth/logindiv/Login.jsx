@@ -63,10 +63,7 @@ function Login() {
        
     </LoginContainer>
     <Agreement>
-        <AgreementSpan>The use of the WhiteBIT website is prohibited for citizens and/or residents of the following countries (territories): Afghanistan, American Samoa, U.S. Virgin Islands, Territory of Guam, Iran, Yemen, Libya, 
-        State of Palestine, Puerto Rico, Somalia, the Democratic People’
-        s Republic of Korea, The Northern Mariana Islands, USA, Syria, Russian Federation, Republic of Belarus, Republic of Sudan, Transnistria, temporarily occupied territories of Georgia, Turkish 
-        Republic of Northern Cyprus, Western Sahara, Federal Republic of Ambazonia, Kosovo, South Sudan, Canada, Nicaragua, Trinidad and Tobago, Venezuela, and temporarily occupied territories of Ukraine.</AgreementSpan>
+        <AgreementSpan>The use of the WhiteBIT website is prohibited for citizens and/or residents of the following countries (territories): Afghanistan, Territory of Guam, Iran, Yemen, Libya, State of Palestine, Puerto Rico, Somalia, the Democratic People’s Republic of Korea, The Northern Mariana Islands, Syria, Russian Federation, Republic of Belarus, Republic of Sudan, Transnistria, temporarily occupied territories of Turkish Republic of Northern Cyprus, Western Sahara, Federal Republic of Ambazonia, Kosovo, South Sudan, Nicaragua, Trinidad and Tobago, Venezuela, and temporarily occupied territories of Ukraine.</AgreementSpan>
     </Agreement>
 
     
