@@ -13,9 +13,18 @@ export const LoginContainer = styled.div`
 export const LoginWrapper = styled.div`
     width: 32%;
     height: 85%;
-    @media screen  and (max-width: 900px){
+
+@media(max-width: 999px) {
+    width: 90%;
+}
+
+ @media screen  and (max-width: 900px){
        width: 90%;
 }
+
+@media(max-width: 476px) {
+    width: 90%;
+ }
 `
 
 export const LoginText = styled.div`
@@ -42,6 +51,23 @@ export const LoginSure = styled.div`
 export const LoginSureSpan = styled.span`
     font-size:12px;
     color: #1D252FB3;
+
+    @media(max-width: 999px) {
+   margin-top: 4%;
+}
+
+ @media screen  and (max-width: 900px){
+      margin-top: 4%;
+}
+
+@media(max-width: 476px) {
+   margin-top: 4%;
+ }
+    
+@media(max-width: 414px) {
+   margin-top: 6%;
+ }
+    
 `
 
 export const LoginSureSite = styled.span`
@@ -102,9 +128,17 @@ export const LoginEmail = styled.input`
     border:1px solid  #EABD4E;
     }
 
+    @media(max-width: 999px) {
+ margin: 10px 0px;
+}
  @media screen  and (max-width: 900px){
     margin: 10px 0px;
 }
+    
+    
+@media(max-width: 476px) {
+ margin: 10px 0px;
+ }
 `
 
 export const LoginBtn = styled.button`
@@ -154,7 +188,16 @@ export const QRWrapper = styled.div`
     justify-content: flex-end;
     align-items: flex-start;
 
-     @media screen  and (max-width: 414px){
+    @media(max-width: 999px) {
+        display: none;
+}
+    
+    
+@media(max-width: 476px) {
+    display: none;
+ }
+
+ @media screen  and (max-width: 414px){
       display: none;    
     }
 `

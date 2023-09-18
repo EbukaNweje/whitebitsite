@@ -32,11 +32,25 @@ flex-direction: column;
 justify-content: center;
 font-family:  Inter, arial, sans-serif; 
 
+@media(max-width: 999px) {
+    width: 100%;
+    margin-top: 20%;
+    gap: 15px;
+}
+    
+    
+@media(max-width: 476px) {
+    width: 100%;
+    margin-top: 20%;
+    gap: 15px;
+ }
+
 @media screen  and (max-width: 414px){
     width: 100%;
     margin-top: 20%;
     gap: 15px;
 }
+
 `
 
 export const SignupHeader = styled.h1`
@@ -49,6 +63,16 @@ export const SignupHeader = styled.h1`
     @media screen  and (max-width: 414px){
         font-size: 35px;
 }
+
+@media(max-width: 999px) {
+
+    font-size: 35px;
+}
+    
+    
+@media(max-width: 476px) {
+    font-size: 35px;
+ }
 `
 
 export const SignupSubHeader = styled.span`
@@ -119,6 +143,17 @@ export const SignupValidation = styled.div`
         /* background: #000; */
         flex-wrap: wrap;
 }
+
+@media(max-width: 999px) {
+    width: 100%;
+    flex-wrap: wrap;
+}
+    
+    
+@media(max-width: 476px) {
+    width: 100%;
+    flex-wrap: wrap;
+ }
 `
 
 export const CharValidation = styled.div`

@@ -23,13 +23,13 @@ const Header = () => {
           <HeaderLeft>
               <Logo src={LogoImg} alt="Whitebit Logo" onClick={()=>{navigate("/"), setToggle(false)}}/>
               <Nav>
-                  <div className='NavTextBody'><span>Invest</span>
+                  <div className='NavTextBody'><span onClick={()=>navigate("/login")}>Invest</span>
                   {/* <IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/> */}
                   </div>
                   <div className='NavTextBody'><span>Futures</span>
                   {/* <IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/> */}
                   </div>
-                  <div className='NavTextBody'><span>Plan</span>
+                  <div className='NavTextBody'><span onClick={()=>navigate("/login")}>Plan</span>
                   {/* <IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/> */}
                   </div>
                   <div className='NavTextBody'><span>WBT Boost</span>

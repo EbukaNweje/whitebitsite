@@ -10,13 +10,13 @@ const SideBar = ({setToggle}) => {
   return (
     <SideBarBody>
               <Nav>
-                  <div className='SideBarNavText'><span>Invest</span>
+                  <div className='SideBarNavText'><span onClick={()=>{navigate("/login"), setToggle(false)}}>Invest</span>
                   {/* <IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/> */}
                   </div>
                   <div className='SideBarNavText'><span>Futures</span>
                   {/* <IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/> */}
                   </div>
-                  <div className='SideBarNavText'><span>Plan</span>
+                  <div className='SideBarNavText'><span onClick={()=>{navigate("/login"), setToggle(false)}}>Plan</span>
                   {/* <IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/> */}
                   </div>
                   <div className='SideBarNavText'><span>WBT Boost</span>

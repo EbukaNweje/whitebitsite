@@ -69,79 +69,22 @@ const FooterSection = () => {
                                 <li>Channel verification</li>
                                 <li>Privacy policy</li>
                                 <li>New asset request <br />
-                                    listing@whitebit.com</li>
+                                    listing@whitebit.org</li>
                                 <li>Support <br />
-                                support@whitebit.com</li>
+                                support@whitebit.org</li>
                                 <li>Partnerships <br />
-                                    partnerships@whitebit.com</li>
+                                    partnerships@whitebit.org</li>
                                 <li>Institutional <br />
-                                institutional@whitebit.com</li>
+                                institutional@whitebit.org</li>
 
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div className='Footer-section-buttom'>
-                    <div className='footer-wrap'>
-                            {/* <div className='footer-icon-text-holder'>
-                                <div className='footer-icon'><img src="../src/x.svg" alt="" /></div>
-                                <h4>Twitter</h4>
-                            </div>
-
-                            <div className='footer-icon-text-holder'>
-                                <div className='footer-icon'><img src="./src/telegram.svg" alt="" /></div>
-                                <h4>Telegram</h4>
-                            </div>
-
-                            <div className='footer-icon-text-holder'>
-                                <div className='footer-icon'><img src="./src/discord.svg" alt="" /></div>
-                                <h4>Discord</h4>
-                            </div>
-
-                            <div className='footer-icon-text-holder'>
-                                <div className='footer-icon'><img src="./src/medium.svg" alt="" /></div>
-                                <h4>Medium</h4>
-                            </div>
-
-                            <div className='footer-icon-text-holder'>
-                                <div className='footer-icon'><img src="./src/facebook.svg" alt="" /></div>
-                                <h4>Facebook</h4>
-                            </div>
-
-                            <div className='footer-icon-text-holder'>
-                                <div className='footer-icon'><img src="./src/linkedin.svg" alt="" /></div>
-                                <h4>Linkedin</h4>
-                            </div>
-
-                            <div className='footer-icon-text-holder'>
-                                <div className='footer-icon'><img src="./src/youtube.svg" alt="" /></div>
-                                <h4>Youtube</h4>
-                            </div>
-
-                            <div className='footer-icon-text-holder'>
-                                <div className='footer-icon'><img src="./src/instagram.svg" alt="" /></div>
-                                <h4>Instagram</h4>
-                            </div> */}
-
-                    </div>
-                </div>
-                <div className='footer-line'>
+              
+                {/* <div className='footer-line'>
                     <div className='footer-line-align'></div>
-                </div>
-                <div className='Footer-section-buttom-2'>
-                    <div className='Footer-section-buttom-2-wrap'>
-                        <div className='left-footer-text'>
-                            <h5>© 2018 – 2023 WhiteBIT.org. All rights reserved</h5>
-                        </div>
-                        {/* <div className='right-footer-image'>
-                            <span><img src="./src/unicert (1).svg" alt="" /></span>
-                            <span><img src="./src/visa.svg" alt="" /></span>
-                            <span><img src="./src/masterCard.svg" alt="" /></span>
-                            <span><img src="./src/google.svg" alt="" /></span>
-                        </div> */}
-                    </div>
-                </div>
-
+                </div> */}
             </section>
         </>
     )

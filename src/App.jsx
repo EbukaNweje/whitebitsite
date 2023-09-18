@@ -5,6 +5,7 @@ import LandingPage from './components/LandingPage/LandingPages';
 import Signup from './components/Auth/SignUp';
 import Login from "./components/Auth/logindiv/Login"
 import Footer from "./components/Footer/FooterSection"
+import LastFoter from './components/Footer/LastFoter';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <Route path='/login' element={<Login/>}/>
       </Routes>
       <Footer/>
+      <LastFoter/>
     </BrowserRouter>
    
   )
