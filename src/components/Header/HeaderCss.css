@@ -72,6 +72,16 @@
     /* border-radius: 10%; */
 }
 
+@media(max-width: 999px) {
+    .Menu {
+        display: block;
+        margin-left: 3%;
+    }
+
+    .SideBarNavText {
+        height: 32px;
+    }
+}
 
 /* .text{
     color: rgb(16, 16, 16);

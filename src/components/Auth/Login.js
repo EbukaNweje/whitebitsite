@@ -8,6 +8,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 padding-top: 8%;
+padding-bottom: 5%;
 `
 
 export const SignupWrapper = styled.div`

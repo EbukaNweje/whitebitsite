@@ -27,45 +27,7 @@
     width: 100%;
 }
 
-@media(max-width: 414px) {
 
-    .Hero-holder {
-        padding-top: 10%;
-        height: 75vh;
-        display: flex;
-    }
-
-    .Hero-holder-wrap {
-      height: 90%;
-      display: block;
-      /* background: green; */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-around;
-    }
-
-    .Hero-right {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* background: red; */
-    }
-    .image-url{
-        display: flex;
-        justify-content: center;
-        width: 80%;
-    }   
-}
-
-.Hero-left {
-    width: 65%;
-    height: 70%;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
-}
 
 .Hero-right {
     width: 34%;
@@ -75,6 +37,15 @@
 .Hero-right img {
     width: 100%;
     height: 100%;
+}
+
+.Hero-left {
+    width: 65%;
+    height: 70%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
 }
 
 .Hero-header-text {
@@ -123,42 +94,154 @@
     line-height: 22px;
 }
 
-@media (max-width: 414px) {
-    /* .Hero-holder {
-        height: auto;
-        min-height: 100vh;
-    } */
+@media(max-width: 999px) {
 
-    /* .Hero-holder-wrap {
+.Hero-holder {
+    padding-top: 10%;
+    height: 100vh;
+    /* background: red; */
+}
+
+
+.Hero-holder-wrap{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.Hero-right {
+    width: 60%;
+    height: 70%;
+}
+
+.image-url {
+    width: 100%;
+}
+
+.Hero-left {
+    width: 90%;
+}
+
+.Hero-header-text {
+    font-size: 30px;
+    margin-bottom: 1%;
+}
+
+.Hero-header-p {
+    font-size: 10px;
+    width: 100%;
+    line-height: 19px;
+    margin-bottom: 3%;
+}
+
+.hero-bttn {
+    width: 60%;
+    /* margin-top: 10px; */
+    height: 40px;
+}
+}
+
+
+@media(max-width: 476px) {
+    
+    .Hero-holder {
+        padding-top: 10%;
+        height: 100vh;
+        /* background: #000; */
+    }
+    
+    
+    .Hero-holder-wrap{
+        width: 90%;
+        display: flex;
         flex-direction: column;
-        height: auto;
-    } */
+        align-items: center;
+    }
+    
+    
+    .Hero-right {
+        width: 60%;
+        height: 70%;
+    }
+    
+    .image-url {
+        width: 100%;
+    }
+    
+    .Hero-left {
+        width: 90%;
+    }
     
     .Hero-header-text {
-      font-size: 35px;
+        font-size: 30px;
+        margin-bottom: 1%;
     }
-
+    
     .Hero-header-p {
-        width: 90%;
-        font-size: 12px;
-    }
-
-    .Hero-left {
+        font-size: 10px;
         width: 100%;
-        height: auto;
-        text-align: center;
-        margin-bottom: 20px;
+        line-height: 19px;
+        margin-bottom: 3%;
+    }
+    
+    .hero-bttn {
+        width: 60%;
+        /* margin-top: 10px; */
+        height: 40px;
+    }
+}
+
+@media (max-width: 414px) {
+
+    .Hero-holder {
+        height: max-content;
+        /* padding-bottom: 2%; */
     }
 
     .Hero-right {
-        width: 100%;
-        height: auto;
-        order: -1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background: red;  */
+        margin-bottom: 20%;
+        margin-top: 25%;
     }
+    .image-url{
+        display: flex;
+        justify-content: center;
+        width: 80%;
+    }  
 
-    .hero-bttn {
-        width: 90%;
-        height: 60px;
-        margin-top: 20px;
-    }
+        .Hero-header-text {
+          font-size: 35px;
+        }
+    
+        .Hero-header-p {
+            width: 90%;
+            font-size: 12px;
+        }
+    
+        .Hero-left {
+            width: 100%;
+            height: auto;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    
+        .Hero-right {
+            width: 100%;
+            height: auto;
+            order: -1;
+        }
+    
+        .hero-bttn {
+            width: 90%;
+            height: 60px;
+            margin: 20px 0px;
+        }
 }
+
+
+

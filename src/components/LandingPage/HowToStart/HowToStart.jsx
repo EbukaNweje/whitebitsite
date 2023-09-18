@@ -1,7 +1,10 @@
 import React from "react";
 import "../HowToStart/HowToStart.css";
+import { useNavigate } from 'react-router-dom'
+
 
 const HowToStart = () => {
+  const navigate = useNavigate();
   return (
     <main className="main2">
       <div className="mainwrap">
@@ -20,20 +23,17 @@ const HowToStart = () => {
                 <span>Step 1</span>
               </div>
               <p>
-                ..................................................................
+                ..........................................................................................
               </p>
               <div className="step1">
                 <span>Step 2</span>
               </div>
               <p>
-                ..................................................................
-              </p>
+                ........................................................</p>
+              <p className="Step1P">.................................................................</p>
               <div className="step1">
                 <span>Step 3</span>
               </div>
-              <p className="Step1P">
-                .................................................................
-              </p>
             </div>
             <div className="stepsInfo">
               <div className="stepsInfoWrap">
@@ -71,7 +71,7 @@ const HowToStart = () => {
                   the horns! Sign up and get access to all the features for
                   efficient trading right now. Let's set the level together!
                 </p>
-                <button>Register</button>
+                <button onClick={()=>navigate("/Signup")}>Register</button>
               </div>
               {/* <div className="stepsInfoBoxButton">
               </div> */}

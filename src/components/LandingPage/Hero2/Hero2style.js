@@ -49,6 +49,12 @@ margin-top: 5%;
     /* justify-content: center; */
     /* flex-wrap: wrap; */
 }
+
+@media(max-width: 476px) {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+ }
 @media Screen and (max-width: 425px){
     width: 100%;
     flex-direction: column;

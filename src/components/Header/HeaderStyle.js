@@ -12,6 +12,11 @@ export const HeaderBody = styled.div`
     @media(max-width: 414px) {
       height: 7vh;
   }
+  
+  
+  @media(max-width: 999px) {
+      height: 12vh;
+  }
 
 `
 export const HeaderLeft = styled.div`
@@ -32,6 +37,10 @@ export const Logo = styled.img`
     @media(max-width: 414px) {
       width: 50%;
     }
+
+    @media(max-width: 999px) {
+      width: 50%;
+  }
 `
 
 export const Nav = styled.div`
@@ -44,6 +53,10 @@ export const Nav = styled.div`
     @media(max-width: 414px) {
       display: none
     }
+
+    @media(max-width: 999px) {
+      display: none;
+  }
 `
 
 // export const NavTextBody = styled.div`
@@ -113,6 +126,11 @@ export const HeaderButton = styled.button`
         display: ${({cl})=> (cl ? "none" : "block")};
         width:40%;
     }
+
+@media(max-width: 999px) {
+  display: ${({cl})=> (cl ? "none" : "block")};
+  width:40%;
+ }
 ` 
 
 export const HeaderMobileDiv = styled.div`
@@ -120,7 +138,7 @@ export const HeaderMobileDiv = styled.div`
   height: 100vh;
   background: rgb(16, 16, 16);
   position: fixed;
-  top: 7%;
+  top: 12%;
 `
 
 // export const HeaderBody = styled.div`

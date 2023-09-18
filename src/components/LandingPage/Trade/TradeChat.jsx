@@ -39,7 +39,26 @@ const Span = styled.div`
     font-weight: 700;
     margin: 0 2%;
 
-    @media(max-width: 414px) {
+    @media(max-width: 999px) {
+        font-size: 25px;
+        line-height: 35px;
+        font-weight: 800;
+        margin-left: 4%;
+        margin-bottom: 3%;
+        text-align: center;
+}
+    
+    
+@media(max-width: 476px) {
+    font-size: 25px;
+        line-height: 35px;
+        font-weight: 800;
+        margin-left: 4%;
+        margin-bottom: 3%;
+        text-align: center;
+ }
+
+ @media(max-width: 414px) {
         font-size: 25px;
         line-height: 35px;
         font-weight: 800;
@@ -47,6 +66,7 @@ const Span = styled.div`
         margin-bottom: 3%;
         text-align: center;
     }
+  
 `
 
 const ChatDiv = styled.div`

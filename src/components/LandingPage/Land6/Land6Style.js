@@ -20,10 +20,10 @@ align-items: center;
 padding: 8rem 0;
 
 @media Screen and (max-width: 768px){
-    padding: 0 0 50rem 0
+    padding: 10rem 0 50rem 0
 }
 @media Screen and (max-width: 500px){
-    padding: 0 0 25rem 0
+    padding: 4rem 0 25rem 0
 }
 
 `;

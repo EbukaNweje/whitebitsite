@@ -32,6 +32,7 @@
 .mainHeader p{
     color: #1d252fb3;
     font: 16px inter, arial, sans-serif;
+    margin: 2% 0px;
 }
 
 .mainSteps{
@@ -40,6 +41,7 @@
     /* background-color: pink; */
     display: flex;
     flex-direction: column;
+    margin: 1% 0px;
 }
 
 .mainWraps{
@@ -54,6 +56,7 @@
     /* background-color: rgb(244, 244, 191); */
     display: flex;
     align-items: center;
+    margin: 1% 0px;
 }
 
 .step1{
@@ -109,6 +112,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin-bottom: 2%;
 }
 
 .stepInfoWrapText3 p{
@@ -150,7 +154,7 @@
 .stepsInfoBox{
     width: 100%;
     height: max-content;
-    background-color: yellow;
+    /* background-color: yellow; */
     /* border-radius: 20px; */
     display: flex;
     flex-direction: column;
@@ -196,13 +200,14 @@
     background-color: #EABE4D;
     border: none;
     border-radius: 7px;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 1268px) {
     .main2{
         width: 100%;
         /* background-color: red; */
-        height: 90vh;
+        height: max-content;
         /* background-color: rgb(23, 23, 23); */
         display: flex;
         justify-content: center;
@@ -329,7 +334,7 @@
 @media screen and (max-width: 767px){
     .main2{
         width: 100%;
-        height: 90vh;
+        height: max-content;
         /* background-color: rgb(116, 240, 231); */
         /* display: flex;
         justify-content: center; */
@@ -387,7 +392,7 @@
     }
 
     .step1{
-        width: 80px;
+        width: 50px;
         height: 20%;
         /* height: 30px; */
         border-radius: 30px;
@@ -395,6 +400,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        z-index: 10;
+        padding: 5 px;
         /* margin-top: 90px; */
     }
 
