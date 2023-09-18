@@ -26,7 +26,7 @@ function Login() {
         <LoginWrapper>  
         <LoginSure>
             <LoginSureSpan>Please make sure you are using the official site</LoginSureSpan>
-            <LoginSureSite>https://whitebit.com</LoginSureSite>
+            <LoginSureSite>https://whitebit.org</LoginSureSite>
         </LoginSure>
         <LoginText>
             <LoginHeader>Log In</LoginHeader>
