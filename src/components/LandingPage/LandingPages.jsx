@@ -6,6 +6,7 @@ import TradeChat from './Trade/TradeChat'
 import MyHeroPage from "./Hero2/Hero"
 import Authtomated from './Land6/Authtomated'
 import HowToStart from "./HowToStart/HowToStart"
+import Question from "./Faq/Question"
 
 const LandingPages = () => {
   return (
@@ -16,6 +17,7 @@ const LandingPages = () => {
         <MyHeroPage/>
         <Authtomated/>
         <HowToStart/>
+        {/* <Question/> */}
     </LandingPagesBody>
   )
 }
