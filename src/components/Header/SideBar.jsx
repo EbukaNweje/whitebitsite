@@ -13,18 +13,18 @@ const SideBar = ({setToggle}) => {
                   <div className='SideBarNavText'><span onClick={()=>{navigate("/login"), setToggle(false)}}>Invest</span>
                   {/* <IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/> */}
                   </div>
-                  <div className='SideBarNavText'><span>Futures</span>
+                  <div className='SideBarNavText'><span onClick={()=>navigate("/about")}>About</span>
                   {/* <IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/> */}
                   </div>
                   <div className='SideBarNavText'><span onClick={()=>{navigate("/login"), setToggle(false)}}>Plan</span>
                   {/* <IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/> */}
                   </div>
-                  <div className='SideBarNavText'><span>WBT Boost</span>
-                  {/* <IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/> */}
-                  </div>
-                  <div className='SideBarNavText'><span>More</span>
-                  {/* <IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/> */}
-                  </div>
+                  {/* <div className='SideBarNavText'><span>WBT Boost</span>
+                  <IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/>
+                  </div> */}
+                  {/* <div className='SideBarNavText'><span>More</span>
+                  <IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/>
+                  </div> */}
                   <div className='SideBarNavText'><span>Help</span>
                   {/* <IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/> */}
                   </div>

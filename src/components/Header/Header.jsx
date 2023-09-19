@@ -26,18 +26,18 @@ const Header = () => {
                   <div className='NavTextBody'><span onClick={()=>navigate("/login")}>Invest</span>
                   {/* <IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/> */}
                   </div>
-                  <div className='NavTextBody'><span>Futures</span>
+                  <div className='NavTextBody'><span onClick={()=>navigate("/about")}>About</span>
                   {/* <IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/> */}
                   </div>
                   <div className='NavTextBody'><span onClick={()=>navigate("/login")}>Plan</span>
                   {/* <IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/> */}
                   </div>
-                  <div className='NavTextBody'><span>WBT Boost</span>
-                  {/* <IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/> */}
-                  </div>
-                  <div className='NavTextBody'><span>More</span>
-                  {/* <IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/> */}
-                  </div>
+                  {/* <div className='NavTextBody'><span>WBT Boost</span>
+                  <IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/>
+                  </div> */}
+                  {/* <div className='NavTextBody'><span>More</span>
+                  <IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/>
+                  </div> */}
                   <div className='NavTextBody'><span>Help</span>
                   {/* <IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/> */}
                   </div>

@@ -6,6 +6,7 @@ import Signup from './components/Auth/SignUp';
 import Login from "./components/Auth/logindiv/Login"
 import Footer from "./components/Footer/FooterSection"
 import LastFoter from './components/Footer/LastFoter';
+import About from "./components/AboutPage/AboutPage"
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Header/>
       <Routes>
       <Route path='/' element={<LandingPage/>}/>
+      <Route path='/about' element={<About/>}/>
       <Route path='/signup' element={<Signup/>}/>
       <Route path='/login' element={<Login/>}/>
       </Routes>

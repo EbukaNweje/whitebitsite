@@ -9,6 +9,17 @@ justify-content: center;
 align-items: center;
 padding-top: 8%;
 padding-bottom: 5%;
+@media screen  and (max-width: 900px){
+    padding-top: 30%;
+}
+
+@media screen  and (max-width: 476px){
+    padding-top: 20%;
+}
+
+@media screen  and (max-width: 414px){
+      padding-top: 30%;
+}
 `
 
 export const SignupWrapper = styled.div`
@@ -62,11 +73,12 @@ export const SignupHeader = styled.h1`
 
     @media screen  and (max-width: 414px){
         font-size: 35px;
+        margin-top: -40px;
 }
 
 @media(max-width: 999px) {
-
     font-size: 35px;
+    margin-top: -40px;
 }
     
     
@@ -116,6 +128,7 @@ export const SignupEmail = styled.input`
     font-weight:500 ;
     font-size: 17px;
     padding-left: 10px;
+    margin-bottom: 0px;
     
     &:hover{
     border: 1px solid rgba(0, 0, 0, 0.200);
@@ -342,4 +355,26 @@ export const SignupPassword = styled.input`
     &:focus{
     border:1px solid  #EABD4E;
     } */
+`
+
+export const Erro = styled.div`
+    width: 100%;
+    height: 7vh;
+    background: red;
+    color: white;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    font-family:  Inter, arial, sans-serif;
+    padding-left: 10px;
+    justify-content: space-between;
+    transition: margein-top all 350ms ease-in;
+   
+    @media(max-width: 476px) {
+    height: 10vh;
+ }
+
+ @media screen  and (max-width: 414px){
+     height: 6vh;
+}
 `
