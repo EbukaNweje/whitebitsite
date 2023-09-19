@@ -13,7 +13,7 @@ const SideBar = ({setToggle}) => {
                   <div className='SideBarNavText'><span onClick={()=>{navigate("/login"), setToggle(false)}}>Invest</span>
                   {/* <IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/> */}
                   </div>
-                  <div className='SideBarNavText'><span onClick={()=>navigate("/about")}>About</span>
+                  <div className='SideBarNavText'><span onClick={()=>{navigate("/about"), setToggle(false)}}>About</span>
                   {/* <IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/> */}
                   </div>
                   <div className='SideBarNavText'><span onClick={()=>{navigate("/login"), setToggle(false)}}>Plan</span>
