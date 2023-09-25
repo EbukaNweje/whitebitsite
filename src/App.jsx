@@ -4,10 +4,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import LandingPage from './components/LandingPage/LandingPages';
 import Signup from './components/Auth/SignUp';
 import Login from "./components/Auth/logindiv/Login"
-import Footer from "./components/Footer/FooterSection"
-import LastFoter from './components/Footer/LastFoter';
 import About from "./components/AboutPage/AboutPage"
-
+import Dashboard from './components/dashboard/DashBoard/DashBoard';
+import Confirmation from "./components/dashboard/DashBoard/ConfirmDeposit/Confirmation"
 const App = () => {
   return (
     <BrowserRouter>
@@ -17,9 +16,12 @@ const App = () => {
       <Route path='/about' element={<About/>}/>
       <Route path='/signup' element={<Signup/>}/>
       <Route path='/login' element={<Login/>}/>
+      <Route path='/userDashboard' element={<Dashboard/>}/>
+      <Route path='/ConfirmDeposit' element={<Confirmation/>}/>
+
       </Routes>
-      <Footer/>
-      <LastFoter/>
+      {/* <Footer/> */}
+      {/* <LastFoter/> */}
     </BrowserRouter>
    
   )

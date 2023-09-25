@@ -10,6 +10,8 @@ import { LoginContainer, LoginWrapper, LoginText,LoginHeader,
  } from './LoginStyle'
  import {AiFillEye} from "react-icons/ai"
  import { useNavigate } from 'react-router-dom'
+ import Footer from "../../Footer/FooterSection"
+import LastFoter from '../../Footer/LastFoter';
 
 
 function Login() {
@@ -65,8 +67,9 @@ function Login() {
     <Agreement>
         <AgreementSpan>The use of the WhiteBIT website is prohibited for citizens and/or residents of the following countries (territories): Afghanistan, Territory of Guam, Iran, Yemen, Libya, State of Palestine, Puerto Rico, Somalia, the Democratic People’s Republic of Korea, The Northern Mariana Islands, Syria, Russian Federation, Republic of Belarus, Republic of Sudan, Transnistria, temporarily occupied territories of Turkish Republic of Northern Cyprus, Western Sahara, Federal Republic of Ambazonia, Kosovo, South Sudan, Nicaragua, Trinidad and Tobago, Venezuela, and temporarily occupied territories of Ukraine.</AgreementSpan>
     </Agreement>
-
     
+    <Footer/>
+    <LastFoter/>
     </>
     
   )

@@ -11,6 +11,8 @@ import { SignupContainer, SignupWrapper, SignupText,SignupHeader,
  import {AiFillEye} from "react-icons/ai"
  import { useNavigate } from 'react-router-dom'
  import {BeatLoader} from "react-spinners"
+ import Footer from "../Footer/FooterSection"
+import LastFoter from '../Footer/LastFoter';
 //  import { ToastContainer, toast } from 'react-toastify';
 //   import 'react-toastify/dist/ReactToastify.css';
 // import AOS from 'aos'
@@ -30,7 +32,7 @@ const [passwordErrorUpper, setPasswordErrorUpper] = useState();
 const [passwordErrorNumber, setPasswordErrorNumber] = useState();
 const [passwordErrorSymbol, setPasswordErrorSymbol] = useState();
 const [emailError, setEmailError] = useState('');
-const [error, setError] = useState('');
+const [error, setError] = useState({ero: false, msg: ""});
 const [isButtonDisabled, setButtonDisabled] = useState(false);
 
 const validateEmail = (input) => {
@@ -111,16 +113,27 @@ console.log("p",passwordError, "PE", passwordErrorlow, "Pu", passwordErrorUpper,
    // Function to handle button state changes
    const handleButtonClick = () => {
     if(emailError === "Email is required"){
-        setError("Email is required")
+        setError({ero: true, msg: "Email is required"})
+        setTimeout(() => {
+          setError({ero: false})
+        }, [3000]);
     }else if(emailError === "Invalid email format"){
-        console.log("Invalid email format")
+        // console.log("Invalid email format")
+        setError({ero: true, msg: "Invalid email format"})
+        setTimeout(() => {
+          setError({ero: false})
+        }, [3000]);
     }
     else if (passwordError === false && passwordErrorlow === false && passwordErrorUpper  === false && passwordErrorNumber === false && passwordErrorSymbol === false) {
         // Perform form submission logic here
         console.log('submitted to Api');
         setButtonDisabled(!isButtonDisabled);
+        navigate("/userDashboard")
       }else {
-        setError('Form validation failed');
+        setError({ero: true, msg: "Form validation failed"});
+        setTimeout(() => {
+          setError({ero: false})
+        }, [3000]);
       }
   };
 
@@ -129,7 +142,7 @@ console.log("p",passwordError, "PE", passwordErrorlow, "Pu", passwordErrorUpper,
          {/* <div style={{width:"100%", height:"8vh", background:"black"}}></div> */}
          <SignupContainer>
        <SignupWrapper>
-            {error === "" ? null : <Erro><span>{error}</span> <div style={{marginRight: "5%", fontSize: "18px", fontWeight: "700", cursor: "pointer"}} onClick={()=>setError("")}>X</div></Erro>}
+            {error.ero ? <Erro><span>{error.msg}</span> <div style={{marginRight: "5%", fontSize: "18px", fontWeight: "700", cursor: "pointer", animation: "backOutUp", animationDirection:"1s"}} onClick={()=>setError("")}>X</div></Erro>: null}
         <SignupText>
             <SignupHeader>Create account</SignupHeader>
             <SignupSubHeader>Already have an account? <LoginRoute onClick={()=>navigate("/login")}> Log In</LoginRoute></SignupSubHeader>
@@ -162,7 +175,7 @@ console.log("p",passwordError, "PE", passwordErrorlow, "Pu", passwordErrorUpper,
             }   
         </SignupRefHeaderDiv>
             <SignupPrivacy><SignupCheck type='checkbox'/>I agree to the <Privacy>User agreement</Privacy> and <Privacy>Privacy policy</Privacy></SignupPrivacy>
-            <SignupPrivacy><SignupCheck style={{width:"60px",}} type='checkbox'/><span style={{ marginLeft:"-11px"}}>I hereby confirm that I am neither a citizen nor a resident of the following countries:</span></SignupPrivacy>
+            <SignupPrivacy><SignupCheck style={{width:"60px",}} type='checkbox'/><span style={{ marginLeft:"-11px", color: "rgba(29, 37, 47, 0.7)"}}>I hereby confirm that I am neither a citizen nor a resident of the following countries:</span></SignupPrivacy>
             <SignupBtn
                  onClick={handleButtonClick}
                  disabled={isButtonDisabled} 
@@ -170,6 +183,8 @@ console.log("p",passwordError, "PE", passwordErrorlow, "Pu", passwordErrorUpper,
             >{isButtonDisabled ? <BeatLoader color="#8d8f8f"/>: "Continue"}</SignupBtn>
        </SignupWrapper>
     </SignupContainer>
+    <Footer/>
+    <LastFoter/>
     </>
   )
 }

@@ -170,12 +170,12 @@ export const SignupValidation = styled.div`
 `
 
 export const CharValidation = styled.div`
-    padding-inline: 5px;
+    padding-inline:3px;
     border-radius: 5px;
     display: flex;
     align-items: center;
     height: 63%;
-    font-size: 12px;
+    font-size: 10px;
     font-family:  Inter, arial, sans-serif;
     background-color: #E0E0E5;
     color: #1D252FB3;
@@ -339,7 +339,7 @@ export const PasswordDiv = styled.div`
 
 export const SignupPassword = styled.input`
     width: 85%;
-    height: 50px;
+    height: 40px;
     border: none;
     background-color: white;
     font-family:  Inter, arial, sans-serif;
@@ -369,6 +369,8 @@ export const Erro = styled.div`
     padding-left: 10px;
     justify-content: space-between;
     transition: margein-top all 350ms ease-in;
+    animation: backInDown;
+    animation-duration: 1s;
    
     @media(max-width: 476px) {
     height: 10vh;

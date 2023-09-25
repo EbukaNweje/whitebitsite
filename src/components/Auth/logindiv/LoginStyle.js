@@ -343,7 +343,7 @@ export const PasswordDiv = styled.div`
 
 export const SignupPassword = styled.input`
     width: 85%;
-    height: 50px;
+    height: 45px;
     border: none;
     background-color: white;
     font-family:  Inter, arial, sans-serif;
