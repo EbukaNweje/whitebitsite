@@ -25,6 +25,7 @@ const [show, setShow] = useState(true)
 // const [vali, setVali] = useState(false)
 const [email, setEmail] = useState()
 const [password, setPassword] = useState("")
+const [username, setUsername] = useState()
 const navigate = useNavigate();
 const [passwordError, setPasswordError] = useState();
 const [passwordErrorlow, setPasswordErrorLow] = useState("");
@@ -32,6 +33,7 @@ const [passwordErrorUpper, setPasswordErrorUpper] = useState();
 const [passwordErrorNumber, setPasswordErrorNumber] = useState();
 const [passwordErrorSymbol, setPasswordErrorSymbol] = useState();
 const [emailError, setEmailError] = useState('');
+const [usernameError, setUsernameError] = useState('');
 const [error, setError] = useState({ero: false, msg: ""});
 const [isButtonDisabled, setButtonDisabled] = useState(false);
 
@@ -71,6 +73,16 @@ const validateEmail = (input) => {
       setEmailError('Invalid email format');
     } else {
       setEmailError('');
+    }
+  };
+  const handleUsername = (e) => {
+    const newUsername = e.target.value;
+    setUsername(newUsername);
+    // Validate the email
+    if(newUsername.trim() === '') {
+        setUsernameError('Username is required');
+    }else {
+      setUsernameError('');
     }
   };
 
@@ -123,7 +135,18 @@ console.log("p",passwordError, "PE", passwordErrorlow, "Pu", passwordErrorUpper,
         setTimeout(() => {
           setError({ero: false})
         }, [3000]);
-    }
+    }else if(!email){
+      setError({ero: true, msg: "Email is required"})
+        setTimeout(() => {
+          setError({ero: false})
+        }, [3000]);
+    }    
+      else if(!username){
+      setError({ero: true, msg: "Username is required"})
+        setTimeout(() => {
+          setError({ero: false})
+        }, [3000]);
+    }    
     else if (passwordError === false && passwordErrorlow === false && passwordErrorUpper  === false && passwordErrorNumber === false && passwordErrorSymbol === false) {
         // Perform form submission logic here
         console.log('submitted to Api');
@@ -148,8 +171,10 @@ console.log("p",passwordError, "PE", passwordErrorlow, "Pu", passwordErrorUpper,
             <SignupSubHeader>Already have an account? <LoginRoute onClick={()=>navigate("/login")}> Log In</LoginRoute></SignupSubHeader>
         </SignupText>
         <SignupInputs>
-            <SignupEmail placeholder='E-mail' type='text' value={email}  onChange ={handleEmailChange}/>
+            <SignupEmail placeholder='E-mail' type='email' value={email}  onChange ={handleEmailChange}/>
             <p style={{marginTop: "-3%", marginLeft: "2%", color: "red", fontSize: "12px"}}>{emailError}</p>
+            <SignupEmail placeholder='Username' type='text' value={username}  onChange ={handleUsername}/>
+            <p style={{marginTop: "-3%", marginLeft: "2%", color: "red", fontSize: "12px"}}>{usernameError}</p>
         <PasswordDiv>
         <SignupPassword placeholder='Password' type={show? "password":"text"} value={password}  onChange ={handlePasswordChange}/>
             <AiFillEye className={show? "PasswordShow" : "PasswordHide"} onClick={()=>setShow(!show)}/>
