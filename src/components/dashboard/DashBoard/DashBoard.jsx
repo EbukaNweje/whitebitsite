@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {MainContainer, DashBoardBody,DashBoardBodyContainer,DashBoardBodyContainerLeft,
     DashBoardBodyContainerRight,ContainerLeftLogo,ContainerLeftProfile,ContainerLeftUserName,
     ContainerLeftStatus, ContainerLeftBalances,ContainerLeftMenuNav,ContainerLeftMenuNavCard,
@@ -19,9 +19,10 @@ import {BiSolidUpArrowCircle} from "react-icons/bi"
 import {RiHandCoinFill} from "react-icons/ri"
 import WelcomePage from './WelcomePage'
 // import DepositsPage from "./Deposits/Deposits"
-
 import Deposits from './Deposits/Deposits'
 import Plans from "./Plans"
+import {useParams} from "react-router-dom";
+import axios from 'axios'
 
 const DashBoard = () => {
     const [menuclose, setMenuClose] = useState(true)
@@ -31,6 +32,16 @@ const DashBoard = () => {
     const [home, setHome] = useState(true)
     const [plan, setPlan] = useState(false)
     const [active, swtActive] = useState("rgb(1, 52, 84)")
+    const [data, setData] = useState()
+    const {id} = useParams()
+    const url = `https://cheerful-fox-waders.cyclic.cloud/api/userdata/${id}`
+
+    useEffect(() =>{
+        axios.get(url).then(res => setData(res.data.data))
+        /* eslint-disable-next-line react-hooks/exhaustive-deps */
+      }, [])
+
+      console.log("this is my get data", data)
 
   return (
     <MainContainer>
@@ -43,9 +54,9 @@ const DashBoard = () => {
            <ContainerLeftLogo src={logo} alt='Logo'/>
            <ContainerLeftProfile>
                <BiSolidUserCircle style={{color: "white", fontSize: "120px", marginTop: "10%", cursor: "pointer"}}/>
-               <ContainerLeftUserName>Ebuka Nweje</ContainerLeftUserName>
+               <ContainerLeftUserName>{data?.userName}</ContainerLeftUserName>
                <ContainerLeftStatus>Online</ContainerLeftStatus>
-               <ContainerLeftBalances><GrMoney/> $100.00</ContainerLeftBalances>
+               <ContainerLeftBalances><GrMoney/> ${data?.totalDeposit}.00</ContainerLeftBalances>
            </ContainerLeftProfile>
 
            <ContainerLeftMenuNav>
@@ -113,7 +124,7 @@ const DashBoard = () => {
                                 <AiOutlineMenu style={{marginLeft: "5%", fontSize: "30px", color: "white", cursor: "pointer"}} onClick={()=> setMobileMenuClose(true)}/>
                                 </MobileSpan>
                                 <ContainerRightSmaillProfile><BiSolidUserCircle style={{color: "white", fontSize: "50px", cursor: "pointer",}}/>
-                                    <span>Ebuka nweje</span>
+                                    <span>{data?.userName}</span>
                                 </ContainerRightSmaillProfile>
                         </ContainerRightSmallHeader>
                 </ContainerRightHeader>
@@ -121,7 +132,7 @@ const DashBoard = () => {
 
                 <ContainerRightMainBodyChange>
                         <Starting>{
-                                home ? ("Welcome Ebuka Nweje"):
+                                home ? (` Welcome ${data?.userName}`):
                                 withdrawal?("Withdrawal Page"):
                                 deposit?("Deposit Page"):
                                 plan?("Your Plans"): null

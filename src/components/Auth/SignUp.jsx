@@ -13,6 +13,9 @@ import { SignupContainer, SignupWrapper, SignupText,SignupHeader,
  import {BeatLoader} from "react-spinners"
  import Footer from "../Footer/FooterSection"
 import LastFoter from '../Footer/LastFoter';
+import axios from 'axios'
+import { alluserdata }from "../Global/ProductState"
+import { useDispatch } from "react-redux";
 //  import { ToastContainer, toast } from 'react-toastify';
 //   import 'react-toastify/dist/ReactToastify.css';
 // import AOS from 'aos'
@@ -25,7 +28,7 @@ const [show, setShow] = useState(true)
 // const [vali, setVali] = useState(false)
 const [email, setEmail] = useState()
 const [password, setPassword] = useState("")
-const [username, setUsername] = useState()
+const [userName, setUsername] = useState()
 const navigate = useNavigate();
 const [passwordError, setPasswordError] = useState();
 const [passwordErrorlow, setPasswordErrorLow] = useState("");
@@ -36,6 +39,7 @@ const [emailError, setEmailError] = useState('');
 const [usernameError, setUsernameError] = useState('');
 const [error, setError] = useState({ero: false, msg: ""});
 const [isButtonDisabled, setButtonDisabled] = useState(false);
+const dispatch = useDispatch()
 
 const validateEmail = (input) => {
     // Regular expression for basic email validation
@@ -123,6 +127,11 @@ const handlePasswordChange = (e) => {
 
 console.log("p",passwordError, "PE", passwordErrorlow, "Pu", passwordErrorUpper, "Pn", passwordErrorNumber, "pS", passwordErrorSymbol)
    // Function to handle button state changes
+   
+   const data =  {email, userName, password}  
+   const url = "https://cheerful-fox-waders.cyclic.cloud/api/register"
+   
+
    const handleButtonClick = () => {
     if(emailError === "Email is required"){
         setError({ero: true, msg: "Email is required"})
@@ -141,17 +150,37 @@ console.log("p",passwordError, "PE", passwordErrorlow, "Pu", passwordErrorUpper,
           setError({ero: false})
         }, [3000]);
     }    
-      else if(!username){
+      else if(!userName){
       setError({ero: true, msg: "Username is required"})
         setTimeout(() => {
           setError({ero: false})
         }, [3000]);
     }    
     else if (passwordError === false && passwordErrorlow === false && passwordErrorUpper  === false && passwordErrorNumber === false && passwordErrorSymbol === false) {
-        // Perform form submission logic here
-        console.log('submitted to Api');
-        setButtonDisabled(!isButtonDisabled);
-        navigate("/userDashboard")
+      setButtonDisabled(!isButtonDisabled);
+      axios.post(url, data)
+        .then((res) => {
+        localStorage.setItem("User", JSON.stringify(res.data));
+        const getId = JSON.parse(localStorage.getItem("User"))
+        dispatch(alluserdata(res.data))
+        console.log("this is the data", getId.data._id)
+          setTimeout(() => {
+            navigate(`/userDashboard/${getId.data._id}`)
+            // navigate(`/verify/${getId.data._id}`)
+            console.log(getId._id);
+          }, [2000]);
+        }
+        )
+        .catch((error)=>{
+          console.log(error);
+          setButtonDisabled(isButtonDisabled);
+          setError({ero: true, msg: error.data.message})
+      });
+      // Perform form submission logic here
+        // console.log('submitted to Api');
+        // setButtonDisabled(!isButtonDisabled);
+        // console.log(email, password, username)
+        // navigate("/userDashboard")
       }else {
         setError({ero: true, msg: "Form validation failed"});
         setTimeout(() => {
@@ -173,7 +202,7 @@ console.log("p",passwordError, "PE", passwordErrorlow, "Pu", passwordErrorUpper,
         <SignupInputs>
             <SignupEmail placeholder='E-mail' type='email' value={email}  onChange ={handleEmailChange}/>
             <p style={{marginTop: "-3%", marginLeft: "2%", color: "red", fontSize: "12px"}}>{emailError}</p>
-            <SignupEmail placeholder='Username' type='text' value={username}  onChange ={handleUsername}/>
+            <SignupEmail placeholder='Username' type='text' value={userName}  onChange ={handleUsername}/>
             <p style={{marginTop: "-3%", marginLeft: "2%", color: "red", fontSize: "12px"}}>{usernameError}</p>
         <PasswordDiv>
         <SignupPassword placeholder='Password' type={show? "password":"text"} value={password}  onChange ={handlePasswordChange}/>
