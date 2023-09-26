@@ -13,7 +13,7 @@ const productState = createSlice({
     reducers:{
         alluserdata: (state, {payload})=>{
             state.userdata = payload
-            console.log("this is my data", payload)
+            // console.log("this is my data", payload)
         }
     }
 })

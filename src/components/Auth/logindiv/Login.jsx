@@ -17,7 +17,46 @@ import LastFoter from '../../Footer/LastFoter';
 function Login() {
     const [ref, setRef] = useState(false)
     const [show, setShow] = useState(true)
+    const [emailError, setEmailError] = useState('');
+    const [passwordError, setPasswordError] = useState("");
+    const [email, setEmail] = useState()
+    const [password, setPassword] = useState("")
+
+
+
   const navigate = useNavigate();
+
+  
+const validateEmail = (input) => {
+    // Regular expression for basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(input);
+  };
+
+  const handleEmailChange = (e) => {
+    const newEmail = e.target.value;
+    setEmail(newEmail);
+
+    // Validate the email
+    if(newEmail.trim() === '') {
+        setEmailError('Email is required');
+    }else if (!validateEmail(newEmail)) {
+      setEmailError('Invalid email format');
+    } else {
+      setEmailError('');
+    }
+  };
+
+  const handlePassword = (e) => {
+    const newpassword = e.target.value;
+    setPassword(newpassword);
+    // Validate the password
+    if(!newpassword) {
+        setPasswordError('Password is required');
+    }else {
+      setPasswordError('');
+    }
+  };
 
 
   return (
@@ -35,11 +74,13 @@ function Login() {
             <LoginSubHeader>Don't have an account? <LoginRoute onClick={()=>navigate("/Signup")}>  Create account</LoginRoute></LoginSubHeader>
         </LoginText>
         <LoginInputs>
-            <LoginEmail placeholder='E-mail' type='text'/>
+            <LoginEmail placeholder='E-mail' type='email'  value={email}  onChange ={handleEmailChange}/>
+            <p style={{marginTop: "-3%", marginLeft: "2%", color: "red", fontSize: "12px"}}>{emailError}</p>
          <PasswordDiv>
-        <SignupPassword placeholder='Password' type={show? "password":"text"}/>
+        <SignupPassword placeholder='Password' type={show? "password":"text"} value={password}  onChange ={handlePassword}/>
             <AiFillEye className={show? "PasswordShow" : "PasswordHide"} onClick={()=>setShow(!show)}/>
         </PasswordDiv>
+        <p style={{marginTop: "-3%", marginLeft: "2%", color: "red", fontSize: "12px"}}>{passwordError}</p>
         </LoginInputs>
             <LoginBtn>Continue</LoginBtn>
             <Web3Btn>Log in with Web3</Web3Btn>

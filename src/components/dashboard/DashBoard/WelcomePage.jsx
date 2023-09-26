@@ -12,12 +12,16 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import TradeChat from '../../LandingPage/Trade/TradeChat'
 import {useParams} from "react-router-dom";
 import axios from 'axios'
-
+import { useSelector } from "react-redux";
 
 
 const WelcomePage = () => {
     const {id} = useParams()
     const url = `https://cheerful-fox-waders.cyclic.cloud/api/userdata/${id}`
+    const [data, setData] = useState()
+    const userdata = useSelector((state)=> state.persisitedReducer.userdata)
+
+    console.log(userdata.data.userName)
 
     useEffect(() =>{
         axios.get(url).then(res => setData(res.data.data))
@@ -25,10 +29,9 @@ const WelcomePage = () => {
       }, [])
     const [close, setClose] = useState(true)
     const [state, setState] = useState({
-        value: "https://whitebit.org/ebukanweje",
+        value: `https://whitebit.org/${userdata.data.userName}`,
         copied: false,
       });
-    const [data, setData] = useState()
 
   return (
     <ContainerBody>
