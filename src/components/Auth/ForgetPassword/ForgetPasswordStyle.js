@@ -81,7 +81,6 @@ export const LoginInputs = styled.div`
        width: 90%;
 }
     
-    
 @media(max-width: 476px) {
    width: 90%;
  }

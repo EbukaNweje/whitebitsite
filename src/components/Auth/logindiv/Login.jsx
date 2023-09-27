@@ -18,7 +18,6 @@ import { alluserdata }from "../../Global/ProductState"
 import { useDispatch } from "react-redux";
 
 function Login() {
-    // const [ref, setRef] = useState(false)
     const [show, setShow] = useState(true)
     const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState("");
@@ -81,11 +80,8 @@ const validateEmail = (input) => {
         const getId = JSON.parse(localStorage.getItem("User"))
         dispatch(alluserdata(res.data))
         console.log(getId._id)
-        // console.log("this is the data", getId.data._id)
           setTimeout(() => {
             navigate(`/userDashboard/${getId._id}`)
-            // navigate(`/verify/${getId.data._id}`)
-            // console.log(getId._id);
           }, [2000]);
         })
         .catch((error)=>{
