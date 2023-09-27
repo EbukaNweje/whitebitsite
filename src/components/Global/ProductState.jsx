@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     userdata: [],
-    booking : [] 
+    // booking : []
 }
 
 
@@ -14,11 +14,16 @@ const productState = createSlice({
         alluserdata: (state, {payload})=>{
             state.userdata = payload
             // console.log("this is my data", payload)
+        },
+
+        logOut: (state,)=>{
+            state.userdata = []
+            // console.log("this is my data", payload)
         }
     }
 })
 
-export const {alluserdata} = productState.actions;
+export const {alluserdata, logOut} = productState.actions;
 export default productState.reducer
 
 

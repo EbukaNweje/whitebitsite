@@ -21,7 +21,7 @@ const WelcomePage = () => {
     const [data, setData] = useState()
     const userdata = useSelector((state)=> state.persisitedReducer.userdata)
 
-    console.log(userdata.data.userName)
+    // console.log(userdata.data.userName)
 
     useEffect(() =>{
         axios.get(url).then(res => setData(res.data.data))
@@ -29,7 +29,7 @@ const WelcomePage = () => {
       }, [])
     const [close, setClose] = useState(true)
     const [state, setState] = useState({
-        value: `https://whitebit.org/${userdata.data.userName}`,
+        value: `https://whitebit.org/${userdata.userName}`,
         copied: false,
       });
 

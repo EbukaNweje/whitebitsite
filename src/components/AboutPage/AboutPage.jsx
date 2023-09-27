@@ -27,5 +27,6 @@ export default AboutPage;
 const Container = styled.div`
 width: 100%;
 height: auto;
+/* background: linear-gradient(20deg,#e7b24d,#edcf97); */
 /* background-color: red; */
 `;

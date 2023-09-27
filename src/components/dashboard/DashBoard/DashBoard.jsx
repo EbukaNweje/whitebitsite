@@ -5,8 +5,7 @@ import {MainContainer, DashBoardBody,DashBoardBodyContainer,DashBoardBodyContain
     ContainerLeftMenuNavCardBox, ContainerLeftContact, ContainerLeftButtons, ContainerRightHeader,
     ContainerRightSmallHeader,ContainerRightSmaillProfile, ContainerRightMainBodyChange,Logout,
     MobileSpan, DiskTopMenu, MobileNavMenu, ContainerLeftMenuNavMobile,ContainerLeftMenuNavCardmobile,
-    ContainerLeftMenuNavCardBoxMobile, CloseSpanButton,Starting
-
+    ContainerLeftMenuNavCardBoxMobile, CloseSpanButton,Starting, LogoOut
 } from "./DashBoardStyle"
 import logo from "../../../assets/Icon.jpeg"
 import Withdrawal from './Withdrawal/Withdrawal'
@@ -20,9 +19,17 @@ import {RiHandCoinFill} from "react-icons/ri"
 import WelcomePage from './WelcomePage'
 // import DepositsPage from "./Deposits/Deposits"
 import Deposits from './Deposits/Deposits'
-import Plans from "./Plans"
+import Plans from "./Plan"
 import {useParams} from "react-router-dom";
 import axios from 'axios'
+// import { useSelector } from "react-redux";
+import { logOut }from "../../Global/ProductState"
+import { useDispatch } from "react-redux";
+import { useNavigate } from 'react-router-dom'
+
+
+
+
 
 const DashBoard = () => {
     const [menuclose, setMenuClose] = useState(true)
@@ -34,6 +41,9 @@ const DashBoard = () => {
     const [active, swtActive] = useState("rgb(1, 52, 84)")
     const [data, setData] = useState()
     const {id} = useParams()
+    const dispatch = useDispatch()
+    const navigate = useNavigate();
+    
     const url = `https://cheerful-fox-waders.cyclic.cloud/api/userdata/${id}`
 
     useEffect(() =>{
@@ -41,7 +51,7 @@ const DashBoard = () => {
         /* eslint-disable-next-line react-hooks/exhaustive-deps */
       }, [])
 
-      console.log("this is my get data", data)
+    //   console.log("this is my get data", data)
 
   return (
     <MainContainer>
@@ -66,6 +76,8 @@ const DashBoard = () => {
                         setDeposit(false)
                         setWithdrawal(false)
                         setHome(true)
+                        setPlan(false)
+
                        }}
                    ><FaHome style={{fontSize:"40px", color: "#fff", fontWeight: "700"}}/> <span>Home</span></ContainerLeftMenuNavCardBox>
                    <ContainerLeftMenuNavCardBox style={{background: `${deposit ? active : ""}`}}
@@ -73,6 +85,7 @@ const DashBoard = () => {
                         setDeposit(true)
                         setWithdrawal(false)
                         setHome(false)
+                        setPlan(false)
                        }}
                    ><FaDownload style={{fontSize:"40px", color: "#fff", fontWeight: "700"}}/> <span>Deposit</span></ContainerLeftMenuNavCardBox>
                </ContainerLeftMenuNavCard>
@@ -82,14 +95,15 @@ const DashBoard = () => {
                     setDeposit(false)
                     setWithdrawal(true)
                     setHome(false)
+                    setPlan(false)
                    }}
                    ><BiSolidUpArrowCircle style={{fontSize:"40px", color: "#fff", fontWeight: "700"}}/> <span>Withdraw</span></ContainerLeftMenuNavCardBox>
-                   <ContainerLeftMenuNavCardBox><FaMoneyCheckAlt style={{fontSize:"40px", color: "#fff", fontWeight: "700"}}/> <span>Transactions</span></ContainerLeftMenuNavCardBox>
-               </ContainerLeftMenuNavCard>
-               <ContainerLeftMenuNavCard>
                    <ContainerLeftMenuNavCardBox><FaCircleUser style={{fontSize:"40px", color: "#fff", fontWeight: "700"}}/> <span>Profile</span></ContainerLeftMenuNavCardBox>
-                   <ContainerLeftMenuNavCardBox><RiHandCoinFill style={{fontSize:"40px", color: "#fff", fontWeight: "700"}}/> <span>Trading Plans</span></ContainerLeftMenuNavCardBox>
+                   {/* <ContainerLeftMenuNavCardBox><FaMoneyCheckAlt style={{fontSize:"40px", color: "#fff", fontWeight: "700"}}/> <span>Transactions</span></ContainerLeftMenuNavCardBox> */}
                </ContainerLeftMenuNavCard>
+               {/* <ContainerLeftMenuNavCard>
+                   <ContainerLeftMenuNavCardBox><RiHandCoinFill style={{fontSize:"40px", color: "#fff", fontWeight: "700"}}/> <span>Trading Plans</span></ContainerLeftMenuNavCardBox>
+               </ContainerLeftMenuNavCard> */}
                <ContainerLeftMenuNavCard>
                    <ContainerLeftMenuNavCardBox style={{background: `${plan ? active : ""}`}}
                      onClick={()=>{
@@ -109,7 +123,11 @@ const DashBoard = () => {
                <ContainerLeftButtons>Contact Us</ContainerLeftButtons>
            </ContainerLeftContact>
 
-           <Logout>Log Out</Logout>
+           <Logout onClick={()=>{
+            dispatch(logOut()),
+            localStorage.removeItem("User")
+            navigate("/")
+           }}>Log Out</Logout>
        </DashBoardBodyContainerLeft>: null
     }
 
@@ -126,6 +144,13 @@ const DashBoard = () => {
                                 <ContainerRightSmaillProfile><BiSolidUserCircle style={{color: "white", fontSize: "50px", cursor: "pointer",}}/>
                                     <span>{data?.userName}</span>
                                 </ContainerRightSmaillProfile>
+                                    <LogoOut
+                                        onClick={()=>{
+                                            dispatch(logOut()),
+                                            localStorage.removeItem("User")
+                                            navigate("/")
+                                        }}
+                                    >Logout</LogoOut>
                         </ContainerRightSmallHeader>
                 </ContainerRightHeader>
 
@@ -141,7 +166,7 @@ const DashBoard = () => {
                             home?(<WelcomePage/>):
                             withdrawal?(<Withdrawal />):
                             deposit?(<Deposits />):
-                            plan?(<Plans />):null
+                            plan?(<Plans Mydeposits = {setDeposit} myPlans = {setPlan} />):null
                         }
                         {/* <WelcomePage/> */}
                 </ContainerRightMainBodyChange>
@@ -158,6 +183,7 @@ const DashBoard = () => {
                         setWithdrawal(false)
                         setHome(true)
                         setMobileMenuClose(false)
+                        setPlan(false)
                        }}
                    ><FaHome style={{fontSize:"40px", color: "#2980B9", fontWeight: "700"}}/> <span>Home</span></ContainerLeftMenuNavCardBoxMobile>
                    <ContainerLeftMenuNavCardBoxMobile style={{background: `${deposit ? active : ""}`}}
@@ -166,6 +192,7 @@ const DashBoard = () => {
                         setWithdrawal(false)
                         setHome(false)
                         setMobileMenuClose(false)
+                        setPlan(false)
                        }}
                    ><FaDownload style={{fontSize:"40px", color: "#2980B9", fontWeight: "700"}}/> <span>Deposit</span></ContainerLeftMenuNavCardBoxMobile>
                </ContainerLeftMenuNavCardmobile>
@@ -176,16 +203,25 @@ const DashBoard = () => {
                         setWithdrawal(true)
                         setHome(false)
                         setMobileMenuClose(false)
+                        setPlan(false)
                        }}
                    ><BiSolidUpArrowCircle style={{fontSize:"40px", color: "#2980B9", fontWeight: "700"}}/> <span>Withdraw</span></ContainerLeftMenuNavCardBoxMobile>
-                   <ContainerLeftMenuNavCardBoxMobile><FaMoneyCheckAlt style={{fontSize:"40px", color: "#2980B9", fontWeight: "700"}}/> <span>Transactions</span></ContainerLeftMenuNavCardBoxMobile>
-               </ContainerLeftMenuNavCardmobile>
-               <ContainerLeftMenuNavCardmobile>
                    <ContainerLeftMenuNavCardBoxMobile><FaCircleUser style={{fontSize:"40px", color: "#2980B9", fontWeight: "700"}}/> <span>Profile</span></ContainerLeftMenuNavCardBoxMobile>
-                   <ContainerLeftMenuNavCardBoxMobile><RiHandCoinFill style={{fontSize:"40px", color: "#2980B9", fontWeight: "700"}}/> <span>Trading Plans</span></ContainerLeftMenuNavCardBoxMobile>
+                   {/* <ContainerLeftMenuNavCardBoxMobile><FaMoneyCheckAlt style={{fontSize:"40px", color: "#2980B9", fontWeight: "700"}}/> <span>Transactions</span></ContainerLeftMenuNavCardBoxMobile> */}
                </ContainerLeftMenuNavCardmobile>
+               {/* <ContainerLeftMenuNavCardmobile>
+                   <ContainerLeftMenuNavCardBoxMobile><RiHandCoinFill style={{fontSize:"40px", color: "#2980B9", fontWeight: "700"}}/> <span>Trading Plans</span></ContainerLeftMenuNavCardBoxMobile>
+               </ContainerLeftMenuNavCardmobile> */}
                <ContainerLeftMenuNavCardmobile>
-                   <ContainerLeftMenuNavCardBoxMobile><FaHandshake style={{fontSize:"40px", color: "#2980B9", fontWeight: "700"}}/> <span>My Plans</span></ContainerLeftMenuNavCardBoxMobile>
+                   <ContainerLeftMenuNavCardBoxMobile style={{background: `${plan ? active : ""}`}}
+                      onClick={()=>{
+                        setDeposit(false)
+                        setWithdrawal(false)
+                        setHome(false)
+                        setPlan(true)
+                        setMobileMenuClose(false)
+                       }}
+                   ><FaHandshake style={{fontSize:"40px", color: "#2980B9", fontWeight: "700"}}/> <span>My Plans</span></ContainerLeftMenuNavCardBoxMobile>
                    <ContainerLeftMenuNavCardBoxMobile><FaShareFromSquare style={{fontSize:"40px", color: "#2980B9", fontWeight: "700"}}/> <span>Referrals</span></ContainerLeftMenuNavCardBoxMobile>
                </ContainerLeftMenuNavCardmobile>
            </ContainerLeftMenuNavMobile>

@@ -33,6 +33,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+/* background: linear-gradient(20deg,#e7b24d,#edcf97); */
 /* background-color: pink; */
 margin-top: 50px;
 

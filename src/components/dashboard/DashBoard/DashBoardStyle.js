@@ -538,4 +538,28 @@ export const Starting = styled.div`
 
 `
 
+export const LogoOut = styled.div`
+   margin-right: 5%;
+  font-family: Nunito, sans-serif;
+  color: red;
+ font-size: 15px;
+ background-color: white;
+ padding: 5px;
+ border-radius: 7px;
+ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+ cursor: pointer;
+ display: none;
+
+@media screen  and (max-width: 900px){
+   display: flex
+}
+
+@media screen  and (max-width: 476px){
+   display: flex
+}
+
+@media screen  and (max-width: 414px){
+   display: flex
+}
+`
 

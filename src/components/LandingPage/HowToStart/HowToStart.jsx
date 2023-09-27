@@ -54,9 +54,7 @@ const HowToStart = () => {
                 <div className="stepInfoWrapText3">
                   <p>Top up the balance and start trading!</p>
                   <span>
-                    Use your Web3 crypto wallet, credit card, or another payment
-                    method to make the first deposit on our exchange for further
-                    trading.
+                   Use your Crypto wallet or another payment method to make the first deposit to your personal trading account for a start
                   </span>
                 </div>
               </div>

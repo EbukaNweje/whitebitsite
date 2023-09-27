@@ -12,18 +12,20 @@ import { LoginContainer, LoginWrapper, LoginText,LoginHeader,
  import { useNavigate } from 'react-router-dom'
  import Footer from "../../Footer/FooterSection"
 import LastFoter from '../../Footer/LastFoter';
-
+import axios from 'axios'
+import {BeatLoader} from "react-spinners"
+import { alluserdata }from "../../Global/ProductState"
+import { useDispatch } from "react-redux";
 
 function Login() {
-    const [ref, setRef] = useState(false)
+    // const [ref, setRef] = useState(false)
     const [show, setShow] = useState(true)
     const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState("");
     const [email, setEmail] = useState()
     const [password, setPassword] = useState("")
-
-
-
+    const [isButtonDisabled, setButtonDisabled] = useState(false);
+    const dispatch = useDispatch()
   const navigate = useNavigate();
 
   
@@ -58,6 +60,42 @@ const validateEmail = (input) => {
     }
   };
 
+  
+  const data = {email, password}
+  console.log(data)
+  const url = "https://cheerful-fox-waders.cyclic.cloud/api/login"
+
+  const handleButtonClick = () => {
+    if(!email){
+      setEmailError('Email is required');
+      setButtonDisabled(isButtonDisabled);
+    }else if(!password){
+      setPasswordError('Password is required');
+      setButtonDisabled(isButtonDisabled);
+    } else {
+      setButtonDisabled(!isButtonDisabled);
+      axios.post(url, data)
+        .then((res) => {
+          console.log(res)
+        localStorage.setItem("User", JSON.stringify(res.data));
+        const getId = JSON.parse(localStorage.getItem("User"))
+        dispatch(alluserdata(res.data))
+        console.log(getId._id)
+        // console.log("this is the data", getId.data._id)
+          setTimeout(() => {
+            navigate(`/userDashboard/${getId._id}`)
+            // navigate(`/verify/${getId.data._id}`)
+            // console.log(getId._id);
+          }, [2000]);
+        })
+        .catch((error)=>{
+         setPasswordError(error.response.data.message);
+          setButtonDisabled(isButtonDisabled);
+      });
+  };
+
+}
+
 
   return (
     <>
@@ -82,10 +120,14 @@ const validateEmail = (input) => {
         </PasswordDiv>
         <p style={{marginTop: "-3%", marginLeft: "2%", color: "red", fontSize: "12px"}}>{passwordError}</p>
         </LoginInputs>
-            <LoginBtn>Continue</LoginBtn>
+            <LoginBtn
+               onClick={handleButtonClick}
+               disabled={isButtonDisabled} 
+               style={{background: `${isButtonDisabled ? "#E0E0E5" : "#EABD4E"}`}}
+            >{isButtonDisabled ? <BeatLoader color="#8d8f8f"/>: "Continue"}</LoginBtn>
             <Web3Btn>Log in with Web3</Web3Btn>
             <ForgotPasswordDiv>
-                <ForgotPassword>Forgot password?</ForgotPassword>
+                <ForgotPassword onClick={()=>navigate("/forgotpassword")}>Forgot password?</ForgotPassword>
                 <ForgotPasswordLine></ForgotPasswordLine>
             </ForgotPasswordDiv>
        </LoginWrapper>

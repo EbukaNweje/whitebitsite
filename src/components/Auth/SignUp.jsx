@@ -162,7 +162,7 @@ console.log("p",passwordError, "PE", passwordErrorlow, "Pu", passwordErrorUpper,
         .then((res) => {
         localStorage.setItem("User", JSON.stringify(res.data));
         const getId = JSON.parse(localStorage.getItem("User"))
-        dispatch(alluserdata(res.data))
+        dispatch(alluserdata(res.data.data))
         console.log("this is the data", getId.data._id)
           setTimeout(() => {
             navigate(`/userDashboard/${getId.data._id}`)

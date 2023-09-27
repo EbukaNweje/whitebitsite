@@ -8,6 +8,13 @@ const LastFoter = () => {
         <Leftfootertext>
             <h5>© 2018 – 2023 WhiteBIT.org. All rights reserved</h5>
         </Leftfootertext>
+        <ImagePart>
+            <IconImag src='https://cdn.whitebit.com/static/img/footer/unicert.svg' alt='unicert'/>
+            <IconImag src='https://cdn.whitebit.com/static/img/footer/visa.svg' alt='visa'/>
+            <IconImag src='https://cdn.whitebit.com/static/img/footer/masterCard.svg' alt='masterCard'/>
+            <IconImag src='https://cdn.whitebit.com/static/img/footer/google.svg' alt='google'/>
+        </ImagePart>
+
     </Footersectionbuttom2wrap>
 </Footersectionbuttom2>
   )
@@ -29,8 +36,9 @@ const Footersectionbuttom2wrap = styled.div`
     height: 3vh;
     /* border-top: 1px solid lightgray; */
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 `
 const Leftfootertext = styled.div`
     h5 {
@@ -39,4 +47,16 @@ const Leftfootertext = styled.div`
     font-size: 12px;
     font-weight: 400;
     }
+`
+const ImagePart = styled.div`
+   width: 20%;
+   display: flex;
+   height: max-content;
+   /* background: red; */
+   justify-content: space-between;
+`
+const IconImag = styled.img`
+   width: 40px;
+   height: 35px;
+   /* background: blue; */
 `
