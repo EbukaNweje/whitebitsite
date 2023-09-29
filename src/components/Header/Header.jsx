@@ -38,7 +38,7 @@ const Header = () => {
                   {/* <div className='NavTextBody'><span>More</span>
                   <IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/>
                   </div> */}
-                  <div className='NavTextBody'><span>Help</span>
+                  <div className='NavTextBody'><span onClick={()=>navigate("/faq")}>Help</span>
                   {/* <IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/> */}
                   </div>
                   {/* <div className='NavTextBody'> <BsFillCreditCardFill className='Icon'/><span>Wb Card</span><IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/></div> */}

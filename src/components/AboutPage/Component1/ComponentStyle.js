@@ -52,12 +52,12 @@ text-align: center;
 
 @media Screen and (max-width: 768px){
     width: 65%;
-    margin-top: 60px;
+    margin-top: 20px;
     padding-bottom: 30px;
 }
 @media Screen and (max-width: 425px){
     width: 95%;
-    margin-top: 60px;
+    margin-top: 20px;
     padding-bottom: 30px;
 }
 @media Screen and (max-width: 320px){
