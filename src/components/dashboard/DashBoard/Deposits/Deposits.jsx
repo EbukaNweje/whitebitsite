@@ -25,7 +25,7 @@ function Deposits() {
 
       const handlAmountFild = () =>{
         if(amount === "0.00"){
-            setAmountError('You can not leave this faild Empty');
+            setAmountError('You can not leave this Field Empty');
         }else {
             if(btc === true){
                 setBnb(false)
