@@ -3,13 +3,14 @@ import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
 import Footer from "../Footer/FooterSection"
 import LastFoter from '../Footer/LastFoter';
+import Ten from "./introImgNew.png"
 
 const Referral = () => {
 const nav = useNavigate()
   return (
     <>
     <Main>
-        <BigImg src="https://cdn.whitebit.com/static/img/referral/introImgNew.png" alt="Referral"/>
+        <BigImg src={Ten} alt="Referral"/>
         <H1>Referral program</H1>
         <P>Get up to 50% of every trading fee paid by the users who sign up via your referral link</P>
 

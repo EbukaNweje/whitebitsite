@@ -25,7 +25,7 @@ const SideBar = ({setToggle}) => {
                   {/* <div className='SideBarNavText'><span>More</span>
                   <IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/>
                   </div> */}
-                  <div className='SideBarNavText'><span onClick={()=>navigate("/faq")}>Help</span>
+                  <div className='SideBarNavText'><span onClick={()=>{navigate("/faq"), setToggle(false)}}>Help</span>
                   {/* <IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/> */}
                   </div>
                   {/* <div className='NavTextBody'> <BsFillCreditCardFill className='Icon'/><span>Wb Card</span><IoIosArrowDown style={{marginLeft: "5px", color: "gray"}}/></div> */}

@@ -66,10 +66,10 @@ const FAQ = () => {
            </FAQBoxesQue>
            {
             ref4?<FAQBoxesAns4>
-                1. You are on the main page of your account. Click on the menu "Wallet" on the left, then select "Balance" in a submenu. <br />
-                2. On the balance page, you will see all currently available currencies for working with our platform. There will be a red "Withdraw" button on the left of each currency. Click on it. <br />
-                3. You will see a window for withdrawal. You will need to enter the desired amount and address to receive your chosen currency (coin or token). Fill in these fields and click on the "Withdraw" button. <br />
-                4. If all the actions are successful, you will see the corresponding window with the transaction number (hash). You can check this hash in the network of your chosen currency.
+                1. Go to the main page of your account. Click on the menu option at the top left, then click Withdraw.  <br />
+                2. Put in your withdrawal amount, select the cryptocurrency you’ll like to withdraw, fill in these fields then click Withdraw from wallet <br />
+                3. Put in the code you received on your email to confirm your withdrawal  <br />
+                4. If all the actions are successful, you will see the corresponding window with the transaction number (hash). You can check this hash in the network of your chosen currency.
             </FAQBoxesAns4>:null
            }
             {
@@ -83,10 +83,10 @@ const FAQ = () => {
             </FAQBoxesQue>
             {
                 ref5?<FAQBoxesAns5>
-                    1. One of the common problems lies in the incorrect entry of your email. Re-check your email.One of the common problems lies in the incorrect entry of your email. Double-check your email. <br />
-                    2. A weak password is the most common reason. The password must contain upper and lower case letters, at least 1 number and 1 special character. The minimum password length is 8 characters. <br />
-                    3. Another reason - you might forget to confirm the agreement. A small box to the left of the Create Account button. <br />
-                    4. If the problem still persists and you cannot continue the registration, report a bug in support.
+                    1. One of the common problems lies in the incorrect entry of your email, re-check your email. One of the common problems lies in the incorrect entry of your email, double-check your email.  <br />
+                    2. A weak password is the most common reason, the password must contain upper and lower case letters, at least 1 number and 1 special character. The minimum password length is 8 characters.  <br />
+                    3. Another reason is that you might forget to confirm the agreement which are the two small boxes at the top of the continue option, click on them and proceed with your account creation. <br />
+                    4. If the problem still persists and you cannot continue the registration, report a bug in support..
                 </FAQBoxesAns5>:null
             }
             {
