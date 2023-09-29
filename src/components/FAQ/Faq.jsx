@@ -35,7 +35,7 @@ const FAQ = () => {
             </FAQBoxesQue>
             {
                 ref2?<FAQBoxesAns2>
-                    1. Click on Login Page
+                    1. Click on Login Page <br />
                     2. Click on Forget Password then you put your email. 
                 </FAQBoxesAns2>:null
             }
@@ -50,7 +50,7 @@ const FAQ = () => {
             </FAQBoxesQue>
             {
                 ref3?<FAQBoxesAns3>
-                    1. You are on the home page of swiftcryptrade.com. Click on the "Register" button at the top right of the page. <br/>
+                    1. You are on the home page of whitebit.org. Click on the "Register" button at the top right of the page. <br/>
                     2. You are on the Registration page, you need to enter an email address and come up with a complex password. The password must include a combination of upper and lower case letters, numbers and special characters. <br/>
 
                 </FAQBoxesAns3>:null
