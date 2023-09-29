@@ -51,13 +51,13 @@ align-items: center;
 text-align: center;
 
 @media Screen and (max-width: 768px){
-    width: 65%;
-    margin-top: 20px;
+    width: 94%;
+    margin-top: 40px;
     padding-bottom: 30px;
 }
 @media Screen and (max-width: 425px){
     width: 95%;
-    margin-top: 20px;
+    margin-top: 40px;
     padding-bottom: 30px;
 }
 @media Screen and (max-width: 320px){
