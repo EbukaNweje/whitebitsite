@@ -12,9 +12,9 @@ const nav = useNavigate()
     <Main>
         <BigImg src={Ten} alt="Referral"/>
         <H1>Referral program</H1>
-        <P>Get up to 50% of every trading fee paid by the users who sign up via your referral link</P>
+        <P>Get up to 10% of every trading fee paid by the users who sign up via your referral link</P>
 
-        <button style={{width: "15%", margin: "2%"}} onClick={()=>nav("/login")}>Get referral link</button>
+        <Button onClick={()=>nav("/login")}>Get referral link</Button>
     </Main>
     <Footer/>
     <LastFoter/>
@@ -37,6 +37,20 @@ const Main = styled.div`
 const BigImg = styled.img`
     width: 50%;
     height: 30%;
+
+@media(max-width: 999px) {
+   width: 80%;
+   height: 20%;
+}
+    
+@media(max-width: 476px) {
+       width: 80%;
+       height: 20%;
+ }
+@media screen  and (max-width: 414px){
+   width: 80%;
+   height: 20%;
+}
 `
 const H1 = styled.h1`
     font-size: 30px;
@@ -50,9 +64,29 @@ const P = styled.h1`
     font-family: Inter, arial, sans-serif;
     padding-top: 10px;
 `
-// const H1 = styled.h1`
-//     font-size: 30px;
-//     color: orange;
-//     font-family: Inter, arial, sans-serif;
-//     padding-top: 10px;
-// `
+const Button = styled.h1`
+    font-size: 18px;
+    color: black;
+    background: orange;
+    font-family: Inter, arial, sans-serif;
+    width: 20%;
+    height: 50px;
+    display: flex;
+    margin-top: 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+
+
+  @media(max-width: 999px) {
+    width: 50%;
+}
+    
+@media(max-width: 476px) {
+      width: 50%;
+ }
+@media screen  and (max-width: 414px){
+    width: 50%;
+}
+`

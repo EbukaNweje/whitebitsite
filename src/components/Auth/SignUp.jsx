@@ -16,6 +16,8 @@ import LastFoter from '../Footer/LastFoter';
 import axios from 'axios'
 import { alluserdata }from "../Global/ProductState"
 import { useDispatch } from "react-redux";
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css'; // optional
 //  import { ToastContainer, toast } from 'react-toastify';
 //   import 'react-toastify/dist/ReactToastify.css';
 // import AOS from 'aos'
@@ -210,11 +212,15 @@ console.log("p",passwordError, "PE", passwordErrorlow, "Pu", passwordErrorUpper,
         </PasswordDiv>
         </SignupInputs>
         <SignupValidation>
+            <Tippy content={<span style={{fontSize: "12px", fontFamily:"Inter, arial, sans-serif", fontWeight:"700"}}>You can use only latin characters</span>}>
             <CharValidation style={{color: `${passwordError ? "white" : "gray"}`, backgroundColor: `${passwordError ? "red" : "#E0E0E5"}`, display: `${password.length >= 8 ? "none" : "flex"}` }}>8+ Characters <ValidationImg src="https://cdn.whitebit.com/static/img/ui-kit/24px/info.svg" alt="" /></CharValidation>
+            </Tippy>
             <LowerValidation style={{color: `${passwordErrorlow === "" ? "gray" : "white"}`, backgroundColor: `${passwordErrorlow === "" ? "#E0E0E5" : "red"}`, display: `${passwordErrorlow === false ? "none" : "flex"}` }}>Lowercase</LowerValidation>
             <CapValidation style={{color: `${passwordErrorUpper ? "white" : "gray"}`, backgroundColor: `${passwordErrorUpper ? "red" : "#E0E0E5"}`, display: `${passwordErrorUpper === false ? "none" : "flex"}` }}> Capital</CapValidation>
             <NumValidation style={{color: `${passwordErrorNumber ? "white" : "gray"}`, backgroundColor: `${passwordErrorNumber ? "red" : "#E0E0E5"}`, display: `${passwordErrorNumber === false ? "none" : "flex"}` }}>Number</NumValidation>
+            <Tippy content={<span style={{fontSize: "12px", fontFamily:"Inter, arial, sans-serif", fontWeight:"700"}}>Spacial characters to use:!"#$%&'()*+,-./:;=?@[\]^_`</span>}>
             <SymValidation style={{color: `${passwordErrorSymbol ? "white" : "gray"}`, backgroundColor: `${passwordErrorSymbol ? "red" : "#E0E0E5"}`, display: `${passwordErrorSymbol === false ? "none" : "flex"}` }}>Symbol <ValidationImg src="https://cdn.whitebit.com/static/img/ui-kit/24px/info.svg" alt="" /></SymValidation>
+            </Tippy>
         </SignupValidation>
         <SignupRef>
             <SignupRefHeader>
@@ -229,7 +235,12 @@ console.log("p",passwordError, "PE", passwordErrorlow, "Pu", passwordErrorUpper,
             }   
         </SignupRefHeaderDiv>
             <SignupPrivacy><SignupCheck type='checkbox'/>I agree to the <Privacy>User agreement</Privacy> and <Privacy>Privacy policy</Privacy></SignupPrivacy>
-            <SignupPrivacy><SignupCheck style={{width:"60px",}} type='checkbox'/><span style={{ marginLeft:"-11px", color: "rgba(29, 37, 47, 0.7)"}}>I hereby confirm that I am neither a citizen nor a resident of the following countries:</span></SignupPrivacy>
+            <SignupPrivacy><SignupCheck style={{width:"60px",}} type='checkbox'/><span style={{ marginLeft:"-11px", color: "rgba(29, 37, 47, 0.7)"}}>I hereby confirm that I am neither a citizen nor a resident of the following countries: 
+            <Tippy style={{backgroundColor:"white"}} content={<span style={{fontSize: "12px", fontFamily:"Inter, arial, sans-serif", fontWeight:"500", color:"white" }}>Afghanistan, American Samoa, U.S. Virgin Islands, Territory of Guam, Iran, Yemen, Libya, State of Palestine, Puerto Rico, Somalia, the Democratic People’s Republic of Korea, The Northern Mariana Islands, USA, Syria, Russian Federation, Republic of Belarus, Republic of Sudan, Transnistria, temporarily occupied territories of Georgia, Turkish Republic of Northern Cyprus, Western Sahara, Federal Republic of Ambazonia, Kosovo, South Sudan, Canada, Nicaragua, Trinidad and Tobago, Venezuela, and temporarily occupied territories of Ukraine.</span>}>
+            <ValidationImg src="https://cdn.whitebit.com/static/img/ui-kit/24px/info.svg" alt="" />
+            </Tippy>
+            </span>
+            </SignupPrivacy>
             <SignupBtn
                  onClick={handleButtonClick}
                  disabled={isButtonDisabled} 
