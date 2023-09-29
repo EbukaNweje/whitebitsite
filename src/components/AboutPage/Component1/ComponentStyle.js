@@ -23,7 +23,7 @@ align-items: center;
     height: 100vh;
 }
 @media Screen and (max-width: 425px){
-    height: 65vh;
+    height: 80vh;
 }
 @media Screen and (max-width: 320px){
     height: 90vh;
@@ -53,6 +53,7 @@ text-align: center;
 @media Screen and (max-width: 768px){
     width: 65%;
     margin-top: 60px;
+    padding-bottom: 30px;
 }
 @media Screen and (max-width: 425px){
     width: 95%;
@@ -100,10 +101,14 @@ width: 100%;
     font-size: 14.5px;
     opacity: 95%;
     line-height: 25px;
+    height: max-content;
+    padding-bottom: 20px;
 }
 @media Screen and (max-width: 425px){
     font-size: 13.4px;
     opacity: 95%;
     line-height: 25px;
+    height: max-content;
+    padding-bottom: 20px;
 }
 `;

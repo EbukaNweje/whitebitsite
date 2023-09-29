@@ -13,7 +13,7 @@ const FAQ = () => {
     <div style={{paddingTop:"2px"}}>
          <FAQPage>
         <FAQPageHeader>FAQ</FAQPageHeader>
-        <FAQBoxes>
+        {/* <FAQBoxes>
            <FAQBoxesQue>
                 <FAQSpan>How to Buy Cryptocurrency on the WhiteBIT?</FAQSpan>
                 <RefImg className={ref?'rot':null} onClick={()=>setRef(!ref)} src='https://cdn.whitebit.com/static/img/ui-kit/24px/chevron.svg' />
@@ -25,8 +25,8 @@ const FAQ = () => {
             {
 
             }
-        </FAQBoxes>
-        <FAQBoxes>
+        </FAQBoxes> */}
+        {/* <FAQBoxes>
             <FAQBoxesQue>
                 <FAQSpan>Can I Buy Cryptocurrency with a Credit Card?</FAQSpan>
                 <RefImg className={ref2?'rot':null} onClick={()=>setRef2(!ref2)} src='https://cdn.whitebit.com/static/img/ui-kit/24px/chevron.svg' />
@@ -37,7 +37,7 @@ const FAQ = () => {
             {
 
             }
-        </FAQBoxes>
+        </FAQBoxes> */}
         <FAQBoxes>
             <FAQBoxesQue>
                 <FAQSpan>What Types of Cryptocurrencies Are Available to Purchase on the WhiteBIT Crypto Exchange?</FAQSpan>
