@@ -30,7 +30,9 @@ const FooterSection = () => {
                                 <li>WhiteBIT Coin</li>
                                 <li>Download application</li>
                                 <li>Apple iconAndroid icon</li> */}
+                                <Link to="/referral" style={{color:"#B5B5B7"}}>
                                 <li>Referral program</li>
+                                </Link>
                                 {/* <li>Institutional Services</li>
                                 <li>Market Making Program</li>
                                 <li>AML</li>
@@ -55,7 +57,10 @@ const FooterSection = () => {
                                 <Link to="/faq" style={{color:"#B5B5B7"}}>
                                     <li>FAQ</li>
                                 </Link>
+
+                                <Link to="/sendrequest" style={{color:"#B5B5B7"}}>
                                 <li>Ask a question</li>
+                                </Link>
 
                             </ul>
                         </div>
@@ -64,7 +69,9 @@ const FooterSection = () => {
 
                         <ul>
                                 <h3>Documentation</h3>
-                                <li>Privacy policy</li>
+                                    <Link to="/privacy" style={{color:"#B5B5B7"}}>
+                                    <li>Privacy policy</li>
+                                    </Link>
                                 <li>support@whitebit.org</li>
                                 <li>partnerships@whitebit.org</li>
                             </ul>

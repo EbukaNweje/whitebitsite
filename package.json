@@ -26,6 +26,7 @@
     "redux-persist": "^6.0.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.0.7",
+    "sweetalert2": "^11.7.31",
     "uuid": "^9.0.1"
   },
   "devDependencies": {

@@ -11,6 +11,9 @@ import ForgetpassWord from "./components/Auth/ForgetPassword/ForgetPassword"
 import NewPassword from "./components/Auth/NewPassword/NewPassword"
 import ScrollToTop from '../ScrollToTop';
 import Faq from "./components/FAQ/Faq"
+import Privacy from './components/FAQ/Privacy';
+import Referral from './components/FAQ/Referral';
+import Sendrequest from "./components/FAQ/Sendrequest"
 const App = () => {
   return (
     <BrowserRouter>
@@ -23,6 +26,10 @@ const App = () => {
       <Route path='/login' element={<Login/>}/>
       <Route path='/forgotpassword' element={<ForgetpassWord/>}/>
       <Route path='/faq' element={<Faq/>}/>
+      <Route path='/privacy' element={<Privacy/>}/>
+      <Route path='/referral' element={<Referral/>}/>
+      <Route path='/sendrequest' element={<Sendrequest/>}/>
+
       <Route path='/resetpassword' element={<NewPassword/>}/>
       <Route path='/userDashboard/:id' element={<Dashboard/>}/>
       <Route path='/ConfirmDeposit/:paymentmathod' element={<Confirmation/>}/>
