@@ -1,0 +1,4 @@
+.rot{
+    rotate: 180deg;
+    transition: all 350ms;
+}

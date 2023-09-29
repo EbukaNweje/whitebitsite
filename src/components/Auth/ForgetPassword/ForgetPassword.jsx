@@ -5,9 +5,12 @@ import { LoginContainer, LoginWrapper, LoginText,LoginHeader,
  } from './ForgetPasswordStyle'
  import FooterSection from '../../Footer/FooterSection'
  import LastFoter from '../../Footer/LastFoter'
+ import { useNavigate } from 'react-router-dom'
 
 function ForgetPassword () {
-    const [ref, setRef] = useState(false)
+    // const [ref, setRef] = useState(false)
+  const navigate = useNavigate();
+
   return (
     <>
     {/* <div style={{width:"100%", height:"8vh", background:"black"}}></div> */}
@@ -22,7 +25,7 @@ function ForgetPassword () {
             <ForgetPasswordInpur placeholder='E-mail' type='text'/>
 
         </LoginInputs>
-            <LoginBtn>Continue</LoginBtn>
+            <LoginBtn onClick={()=> navigate("/resetpassword")}>Continue</LoginBtn>
        </LoginWrapper>
       
        </>

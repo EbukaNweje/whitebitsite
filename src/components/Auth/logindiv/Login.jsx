@@ -121,7 +121,7 @@ const validateEmail = (input) => {
                disabled={isButtonDisabled} 
                style={{background: `${isButtonDisabled ? "#E0E0E5" : "#EABD4E"}`}}
             >{isButtonDisabled ? <BeatLoader color="#8d8f8f"/>: "Continue"}</LoginBtn>
-            <Web3Btn>Log in with Web3</Web3Btn>
+            {/* <Web3Btn>Log in with Web3</Web3Btn> */}
             <ForgotPasswordDiv>
                 <ForgotPassword onClick={()=>navigate("/forgotpassword")}>Forgot password?</ForgotPassword>
                 <ForgotPasswordLine></ForgotPasswordLine>

@@ -15,7 +15,7 @@ import axios from 'axios'
 import { useSelector } from "react-redux";
 
 
-const WelcomePage = () => {
+const WelcomePage = ({myPlans, myHome}) => {
     const {id} = useParams()
     const url = `https://cheerful-fox-waders.cyclic.cloud/api/userdata/${id}`
     const [data, setData] = useState()
@@ -77,7 +77,7 @@ const WelcomePage = () => {
                     <h1>Active Plan(s) (0)</h1>
                         <ActivePlansBigDiv>
                             <h1>You do not have an active investment plan at the moment.</h1>
-                            <ActivePlansBtn>Buy Plan</ActivePlansBtn>
+                            <ActivePlansBtn onClick={()=> {myPlans(true), myHome(false)}}>Buy Plan</ActivePlansBtn>
                         </ActivePlansBigDiv>
                  </ActivePlans>
 

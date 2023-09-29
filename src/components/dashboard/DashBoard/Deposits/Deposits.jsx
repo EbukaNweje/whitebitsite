@@ -23,33 +23,65 @@ function Deposits() {
         }
       };
 
-    const routConfirm = ()=>{
-        if(btc === true){
-            setBnb(false)
-            setEthereum(false)
-            setDogecoin(false)
-            nav("/ConfirmDeposit/BitcoinPayment")
-            localStorage.setItem("Amounttopay", JSON.stringify(amount))
-        }else if(bnb === true){
-            setBtc(false)
-            setEthereum(false)
-            setDogecoin(false)
-            nav("/ConfirmDeposit/BnbPayment")
-            localStorage.setItem("Amounttopay", JSON.stringify(amount))
-        }else if(ethereum === true){
-            setBnb(false)
-            setBnb(false)
-            setDogecoin(false)
-            nav("/ConfirmDeposit/EthereumPayment")
-            localStorage.setItem("Amounttopay", JSON.stringify(amount))
-        }else if(dogecoin === true){
-            setBnb(false)
-            setEthereum(false)
-            setBtc(false)
-            nav("/ConfirmDeposit/DogecoinPayment")
-            localStorage.setItem("Amounttopay", JSON.stringify(amount))
+      const handlAmountFild = () =>{
+        if(amount === "0.00"){
+            setAmountError('You can not leave this faild Empty');
+        }else {
+            if(btc === true){
+                setBnb(false)
+                setEthereum(false)
+                setDogecoin(false)
+                nav("/ConfirmDeposit/BitcoinPayment")
+                localStorage.setItem("Amounttopay", JSON.stringify(amount))
+            }else if(bnb === true){
+                setBtc(false)
+                setEthereum(false)
+                setDogecoin(false)
+                nav("/ConfirmDeposit/BnbPayment")
+                localStorage.setItem("Amounttopay", JSON.stringify(amount))
+            }else if(ethereum === true){
+                setBnb(false)
+                setBnb(false)
+                setDogecoin(false)
+                nav("/ConfirmDeposit/EthereumPayment")
+                localStorage.setItem("Amounttopay", JSON.stringify(amount))
+            }else if(dogecoin === true){
+                setBnb(false)
+                setEthereum(false)
+                setBtc(false)
+                nav("/ConfirmDeposit/DogecoinPayment")
+                localStorage.setItem("Amounttopay", JSON.stringify(amount))
+            }
         }
-    }
+      }
+
+    // const routConfirm = ()=>{
+    //     if(btc === true){
+    //         setBnb(false)
+    //         setEthereum(false)
+    //         setDogecoin(false)
+    //         nav("/ConfirmDeposit/BitcoinPayment")
+    //         localStorage.setItem("Amounttopay", JSON.stringify(amount))
+    //     }else if(bnb === true){
+    //         setBtc(false)
+    //         setEthereum(false)
+    //         setDogecoin(false)
+    //         nav("/ConfirmDeposit/BnbPayment")
+    //         localStorage.setItem("Amounttopay", JSON.stringify(amount))
+    //     }else if(ethereum === true){
+    //         setBnb(false)
+    //         setBnb(false)
+    //         setDogecoin(false)
+    //         nav("/ConfirmDeposit/EthereumPayment")
+    //         localStorage.setItem("Amounttopay", JSON.stringify(amount))
+    //     }else if(dogecoin === true){
+    //         setBnb(false)
+    //         setEthereum(false)
+    //         setBtc(false)
+    //         nav("/ConfirmDeposit/DogecoinPayment")
+    //         localStorage.setItem("Amounttopay", JSON.stringify(amount))
+    //     }
+    // }
 
 
   return (
@@ -98,7 +130,7 @@ function Deposits() {
                             </div>
                         </div>
                     </div>
-                    <button className='Amount_Btn'  onClick={routConfirm}
+                    <button className='Amount_Btn'  onClick={handlAmountFild}
                         disabled={isButtonDisabled} 
                         style={{background: `${isButtonDisabled ? "#E0E0E5" : "#2980B9"}`}}
                     >{btc? ("Bitcoin payment"): bnb?("Bnb payment"): ethereum?("Ethereum payment"): dogecoin?("Dogcoin payment"): "Proceed to payment"}</button>

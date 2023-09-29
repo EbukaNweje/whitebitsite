@@ -204,6 +204,7 @@
    color: red;
    font-family: cursive;
    transform: scale(1);
+   padding-right: 20px;
 }
 
 .Cancel_Div span:hover {

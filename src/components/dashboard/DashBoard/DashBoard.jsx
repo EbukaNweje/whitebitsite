@@ -15,8 +15,10 @@ import {AiOutlineMenu} from "react-icons/ai"
 import {FaDownload, FaMoneyCheckAlt, FaHome, FaHandshake} from "react-icons/fa"
 import {FaCircleUser, FaShareFromSquare} from "react-icons/fa6"
 import {BiSolidUpArrowCircle} from "react-icons/bi"
-import {RiHandCoinFill} from "react-icons/ri"
+// import {RiHandCoinFill} from "react-icons/ri"
 import WelcomePage from './WelcomePage'
+import Profile from './Profile/Profile'
+import Referrals from './Referrals/Referrals'
 // import DepositsPage from "./Deposits/Deposits"
 import Deposits from './Deposits/Deposits'
 import Plans from "./Plan"
@@ -38,6 +40,8 @@ const DashBoard = () => {
     const [deposit, setDeposit] = useState(false)
     const [home, setHome] = useState(true)
     const [plan, setPlan] = useState(false)
+    const [profiles, setProfiles] = useState(false)
+    const [referral, setReferral] = useState(false)
     const [active, swtActive] = useState("rgb(1, 52, 84)")
     const [data, setData] = useState()
     const {id} = useParams()
@@ -77,7 +81,8 @@ const DashBoard = () => {
                         setWithdrawal(false)
                         setHome(true)
                         setPlan(false)
-
+                        setProfiles(false)
+                        setReferral(false)
                        }}
                    ><FaHome style={{fontSize:"40px", color: "#fff", fontWeight: "700"}}/> <span>Home</span></ContainerLeftMenuNavCardBox>
                    <ContainerLeftMenuNavCardBox style={{background: `${deposit ? active : ""}`}}
@@ -86,6 +91,8 @@ const DashBoard = () => {
                         setWithdrawal(false)
                         setHome(false)
                         setPlan(false)
+                        setProfiles(false)
+                        setReferral(false)
                        }}
                    ><FaDownload style={{fontSize:"40px", color: "#fff", fontWeight: "700"}}/> <span>Deposit</span></ContainerLeftMenuNavCardBox>
                </ContainerLeftMenuNavCard>
@@ -96,9 +103,20 @@ const DashBoard = () => {
                     setWithdrawal(true)
                     setHome(false)
                     setPlan(false)
+                    setProfiles(false)
+                    setReferral(false)
                    }}
                    ><BiSolidUpArrowCircle style={{fontSize:"40px", color: "#fff", fontWeight: "700"}}/> <span>Withdraw</span></ContainerLeftMenuNavCardBox>
-                   <ContainerLeftMenuNavCardBox><FaCircleUser style={{fontSize:"40px", color: "#fff", fontWeight: "700"}}/> <span>Profile</span></ContainerLeftMenuNavCardBox>
+                   <ContainerLeftMenuNavCardBox style={{background: `${profiles ? active : ""}`}}
+                    onClick={()=>{
+                       setDeposit(false)
+                       setWithdrawal(false)
+                       setHome(false)
+                       setPlan(false)
+                       setProfiles(true)
+                       setReferral(false)
+                      }}
+                   ><FaCircleUser style={{fontSize:"40px", color: "#fff", fontWeight: "700"}}/> <span>Profile</span></ContainerLeftMenuNavCardBox>
                    {/* <ContainerLeftMenuNavCardBox><FaMoneyCheckAlt style={{fontSize:"40px", color: "#fff", fontWeight: "700"}}/> <span>Transactions</span></ContainerLeftMenuNavCardBox> */}
                </ContainerLeftMenuNavCard>
                {/* <ContainerLeftMenuNavCard>
@@ -111,9 +129,21 @@ const DashBoard = () => {
                         setWithdrawal(false)
                         setHome(false)
                         setPlan(true)
+                        setProfiles(false)
+                        setReferral(false)
                        }}
                    ><FaHandshake style={{fontSize:"40px", color: "#fff", fontWeight: "700"}}/> <span>My Plans</span></ContainerLeftMenuNavCardBox>
-                   <ContainerLeftMenuNavCardBox><FaShareFromSquare style={{fontSize:"40px", color: "#fff", fontWeight: "700"}}/> <span>Referrals</span></ContainerLeftMenuNavCardBox>
+                   <ContainerLeftMenuNavCardBox
+                   style={{background: `${referral ? active : ""}`}}
+                   onClick={()=>{
+                      setDeposit(false)
+                      setWithdrawal(false)
+                      setHome(false)
+                      setPlan(false)
+                      setProfiles(false)
+                      setReferral(true)
+                     }}
+                   ><FaShareFromSquare style={{fontSize:"40px", color: "#fff", fontWeight: "700"}}/> <span>Referrals</span></ContainerLeftMenuNavCardBox>
                </ContainerLeftMenuNavCard>
            </ContainerLeftMenuNav>
 
@@ -160,13 +190,17 @@ const DashBoard = () => {
                                 home ? (` Welcome ${data?.userName}`):
                                 withdrawal?("Withdrawal Page"):
                                 deposit?("Deposit Page"):
-                                plan?("Your Plans"): null
+                                plan?("Your Plans"):
+                                profiles?("Profile Page"):
+                                referral?("Referral Page"): null
                             }</Starting>
                         {
-                            home?(<WelcomePage/>):
+                            home?(<WelcomePage myPlans = {setPlan} myHome = {setHome} />):
                             withdrawal?(<Withdrawal />):
                             deposit?(<Deposits />):
-                            plan?(<Plans Mydeposits = {setDeposit} myPlans = {setPlan} />):null
+                            plan?(<Plans Mydeposits = {setDeposit} myPlans = {setPlan} />):
+                            profiles?(<Profile/>):
+                            referral?(<Referrals/>): null
                         }
                         {/* <WelcomePage/> */}
                 </ContainerRightMainBodyChange>
@@ -184,6 +218,8 @@ const DashBoard = () => {
                         setHome(true)
                         setMobileMenuClose(false)
                         setPlan(false)
+                        setProfiles(false)
+                       setReferral(false)
                        }}
                    ><FaHome style={{fontSize:"40px", color: "#2980B9", fontWeight: "700"}}/> <span>Home</span></ContainerLeftMenuNavCardBoxMobile>
                    <ContainerLeftMenuNavCardBoxMobile style={{background: `${deposit ? active : ""}`}}
@@ -193,6 +229,8 @@ const DashBoard = () => {
                         setHome(false)
                         setMobileMenuClose(false)
                         setPlan(false)
+                        setProfiles(false)
+                       setReferral(false)
                        }}
                    ><FaDownload style={{fontSize:"40px", color: "#2980B9", fontWeight: "700"}}/> <span>Deposit</span></ContainerLeftMenuNavCardBoxMobile>
                </ContainerLeftMenuNavCardmobile>
@@ -204,9 +242,22 @@ const DashBoard = () => {
                         setHome(false)
                         setMobileMenuClose(false)
                         setPlan(false)
+                        setProfiles(false)
+                       setReferral(false)
                        }}
                    ><BiSolidUpArrowCircle style={{fontSize:"40px", color: "#2980B9", fontWeight: "700"}}/> <span>Withdraw</span></ContainerLeftMenuNavCardBoxMobile>
-                   <ContainerLeftMenuNavCardBoxMobile><FaCircleUser style={{fontSize:"40px", color: "#2980B9", fontWeight: "700"}}/> <span>Profile</span></ContainerLeftMenuNavCardBoxMobile>
+                   <ContainerLeftMenuNavCardBoxMobile
+                   style={{background: `${plan ? active : ""}`}}
+                   onClick={()=>{
+                     setDeposit(false)
+                     setWithdrawal(false)
+                     setHome(false)
+                     setPlan(false)
+                     setMobileMenuClose(false)
+                     setProfiles(true)
+                       setReferral(false)
+                    }}
+                   ><FaCircleUser style={{fontSize:"40px", color: "#2980B9", fontWeight: "700"}}/> <span>Profile</span></ContainerLeftMenuNavCardBoxMobile>
                    {/* <ContainerLeftMenuNavCardBoxMobile><FaMoneyCheckAlt style={{fontSize:"40px", color: "#2980B9", fontWeight: "700"}}/> <span>Transactions</span></ContainerLeftMenuNavCardBoxMobile> */}
                </ContainerLeftMenuNavCardmobile>
                {/* <ContainerLeftMenuNavCardmobile>
@@ -220,9 +271,22 @@ const DashBoard = () => {
                         setHome(false)
                         setPlan(true)
                         setMobileMenuClose(false)
+                        setProfiles(false)
+                       setReferral(false)
                        }}
                    ><FaHandshake style={{fontSize:"40px", color: "#2980B9", fontWeight: "700"}}/> <span>My Plans</span></ContainerLeftMenuNavCardBoxMobile>
-                   <ContainerLeftMenuNavCardBoxMobile><FaShareFromSquare style={{fontSize:"40px", color: "#2980B9", fontWeight: "700"}}/> <span>Referrals</span></ContainerLeftMenuNavCardBoxMobile>
+                   <ContainerLeftMenuNavCardBoxMobile
+                        style={{background: `${referral ? active : ""}`}}
+                        onClick={()=>{
+                           setDeposit(false)
+                           setWithdrawal(false)
+                           setHome(false)
+                           setPlan(false)
+                           setProfiles(false)
+                           setReferral(true)
+                            setMobileMenuClose(false)
+                          }}
+                   ><FaShareFromSquare style={{fontSize:"40px", color: "#2980B9", fontWeight: "700"}}/> <span>Referrals</span></ContainerLeftMenuNavCardBoxMobile>
                </ContainerLeftMenuNavCardmobile>
            </ContainerLeftMenuNavMobile>
                         </MobileNavMenu> : null

@@ -1,14 +1,17 @@
 import React from 'react'
 import './FooterSection.css'
+import { Link } from 'react-router-dom'
+
 // import image
 
 const FooterSection = () => {
+// const navigate = useNavigate();
     return (
         <>
             <section className='Footer-section'>
                 <div className='Footer-section-top'>
                     <div className='top-wrap'>
-                        <div>
+                        {/* <div>
                             <ul>
                                 <h3>Trading</h3>
                                 <li>Markets</li>
@@ -19,16 +22,16 @@ const FooterSection = () => {
                                 <li>Competition</li>
 
                             </ul>
-                        </div>
-                        <div>
+                        </div> */}
+                        <div style={{margin: "10px 0px"}}>
                         <ul>
                                 <h3>Products and Services</h3>
-                                <li>WhiteBIT Earn</li>
+                                {/* <li>WhiteBIT Earn</li>
                                 <li>WhiteBIT Coin</li>
                                 <li>Download application</li>
-                                <li>Apple iconAndroid icon</li>
+                                <li>Apple iconAndroid icon</li> */}
                                 <li>Referral program</li>
-                                <li>Institutional Services</li>
+                                {/* <li>Institutional Services</li>
                                 <li>Market Making Program</li>
                                 <li>AML</li>
                                 <li>Token listing</li>
@@ -37,46 +40,33 @@ const FooterSection = () => {
                                 <li>Whitepay</li>
                                 <li>WB Network</li>
                                 <li>WB Network</li>
-                                <li>WB codes</li>
+                                <li>WB codes</li> */}
 
                             </ul>
                         </div>
 
-                        <div>
+                        <div style={{margin: "10px 0px"}}>
                         <ul>
                                 <h3> Information</h3>
-                                <li>About company</li>
-                                <li>FAQ</li>
+
+                                <Link to="/about" style={{color:"#B5B5B7"}}>
+                                    <li>About company</li>
+                                </Link>
+                                <Link to="/faq" style={{color:"#B5B5B7"}}>
+                                    <li>FAQ</li>
+                                </Link>
                                 <li>Ask a question</li>
-                                <li>Channel verification</li>
-                                <li>Fees</li>
-                                <li>System page</li>
-                                <li>Bug Bounty</li>
-                                <li>Corporate identity</li>
-                                <li>Blog</li>
-                                <li>Careers <span></span></li>
 
                             </ul>
                         </div>
 
-                        <div>
+                        <div style={{margin: "10px 0px"}}>
 
                         <ul>
                                 <h3>Documentation</h3>
-                                <li>API</li>
-                                <li>User agreement</li>
-                                <li>AML policy</li>
-                                <li>Channel verification</li>
                                 <li>Privacy policy</li>
-                                <li>New asset request <br />
-                                    listing@whitebit.org</li>
-                                <li>Support <br />
-                                support@whitebit.org</li>
-                                <li>Partnerships <br />
-                                    partnerships@whitebit.org</li>
-                                <li>Institutional <br />
-                                institutional@whitebit.org</li>
-
+                                <li>support@whitebit.org</li>
+                                <li>partnerships@whitebit.org</li>
                             </ul>
                         </div>
                     </div>
