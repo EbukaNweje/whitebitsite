@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Withdrawal.css'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
@@ -7,6 +7,8 @@ function Withdrawal() {
     const [confirmation, setConfirmation] = useState(false)
     const [walt, setWalt] = useState(false)
     const [withdrw, setWithdrw] = useState()
+    const [data, setData] = useState()
+    const [err, setErr] = useState()
 
     const {id} = useParams()
 
@@ -15,11 +17,21 @@ function Withdrawal() {
         setWithdrw(newAmount);
         // Validate the email
         if(newAmount.trim() === '') {
-            console.log('Withdrawal code is required');
+            setErr('Withdrawal code is required');
         }else {
-            console.log('');
+            setErr('');
         }
       };
+
+      const urll = `https://cheerful-fox-waders.cyclic.cloud/api/userdata/${id}`
+
+      useEffect(() =>{
+          axios.get(urll).then(res => setData(res.data.data))
+          /* eslint-disable-next-line react-hooks/exhaustive-deps */
+        }, [])
+
+        console.log(data)
+
     const url = `https://webtext-qigk.onrender.com/api/requestwithdrawcode/${id}`
 
     const sendWithdrawcode = ()=>{
@@ -36,8 +48,11 @@ function Withdrawal() {
 
     const seeNext = ()=>{
         if(!withdrw){
-            setWalt("Withdrawal code is required")
-        }else{
+            setErr("Withdrawal code is required")
+        }else if(data.withdrawCode != withdrw){
+            setErr("Invalid Code")
+        }
+        else{
             setConfirmation(false),
             setWalt(true)
         }
@@ -124,6 +139,7 @@ function Withdrawal() {
                 <div className='Confirmation_Body'>
                     <h1>Enter the code sent to your mail below</h1>
                     <input className='Confirmation_Input' type="text" onChange={handleAmount} />
+                    <p style={{marginTop: "-3%", marginLeft: "2%", color: "white", fontSize: "12px"}}>{err}</p>
                     <button className='Confirmation_Btn'
                         onClick={()=>{
                             seeNext()
