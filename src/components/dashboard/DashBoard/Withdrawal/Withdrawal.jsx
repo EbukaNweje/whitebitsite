@@ -1,9 +1,49 @@
 import React, { useState } from 'react'
 import './Withdrawal.css'
+import { useParams } from 'react-router-dom'
+import axios from 'axios'
 
 function Withdrawal() {
     const [confirmation, setConfirmation] = useState(false)
     const [walt, setWalt] = useState(false)
+    const [withdrw, setWithdrw] = useState()
+
+    const {id} = useParams()
+
+    const handleAmount = (e) => {
+        const newAmount = e.target.value;
+        setWithdrw(newAmount);
+        // Validate the email
+        if(newAmount.trim() === '') {
+            console.log('Withdrawal code is required');
+        }else {
+            console.log('');
+        }
+      };
+    const url = `https://webtext-qigk.onrender.com/api/requestwithdrawcode/${id}`
+
+    const sendWithdrawcode = ()=>{
+        // console.log(id)
+        setConfirmation(true)
+        axios.post(url)
+        .then(res=>{
+            console.log(res)
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+    }
+
+    const seeNext = ()=>{
+        if(!withdrw){
+            setWalt("Withdrawal code is required")
+        }else{
+            setConfirmation(false),
+            setWalt(true)
+        }
+    }
+
+
   return (
     <div className='Withdrawal_Container'>
         <section  className='Withdrawal_Wrapper'>
@@ -49,9 +89,7 @@ function Withdrawal() {
                             </div>
                         </div>
                     </div>
-                    <button className='Amount_Btn' onClick={()=>{
-                        setConfirmation(true)
-                    }}>Withdraw from wallet</button>
+                    <button className='Amount_Btn' onClick={()=>{sendWithdrawcode()}}>Withdraw from wallet</button>
                 </div>
                 <div className='Withdrawal_Total'>
                     <div className='Total_Card'>
@@ -85,11 +123,10 @@ function Withdrawal() {
                 </div>
                 <div className='Confirmation_Body'>
                     <h1>Enter the code sent to your mail below</h1>
-                    <input className='Confirmation_Input' type="text" />
+                    <input className='Confirmation_Input' type="text" onChange={handleAmount} />
                     <button className='Confirmation_Btn'
                         onClick={()=>{
-                            setConfirmation(false),
-                            setWalt(true)
+                            seeNext()
                         }}
                     >Confirm Withdrawal</button>
                 </div>
@@ -118,7 +155,7 @@ function Withdrawal() {
                     <input className='Confirmation_Input' type="text" />
                     <button className='Confirmation_Btn'
                      onClick={()=>{
-                        setWalt(true)
+                        setWalt(false)
                     }}
                     >Withdrawal</button>
                 </div>
