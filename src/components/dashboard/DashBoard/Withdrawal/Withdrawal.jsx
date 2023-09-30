@@ -3,6 +3,7 @@ import './Withdrawal.css'
 
 function Withdrawal() {
     const [confirmation, setConfirmation] = useState(false)
+    const [walt, setWalt] = useState(false)
   return (
     <div className='Withdrawal_Container'>
         <section  className='Withdrawal_Wrapper'>
@@ -85,7 +86,41 @@ function Withdrawal() {
                 <div className='Confirmation_Body'>
                     <h1>Enter the code sent to your mail below</h1>
                     <input className='Confirmation_Input' type="text" />
-                    <button className='Confirmation_Btn'>Confirm Withdrawal</button>
+                    <button className='Confirmation_Btn'
+                        onClick={()=>{
+                            setConfirmation(false),
+                            setWalt(true)
+                        }}
+                    >Confirm Withdrawal</button>
+                </div>
+            </div>
+        </div>:
+        null
+        }
+        {
+            walt?
+            <div className='Amount_Confrimation'>
+            <div className='Amount_ConfrimationCard'>
+                <div className='Cancel_Div'>
+                    <span onClick={()=>{
+                        setWalt(false)
+                    }}>X</span>
+                </div>
+                <div className='Confirmation_Body'>
+                    <h1>Select your Wallet Address</h1>
+                        <select name="" id="" style={{width:"80%", height:"40px"}}>
+                            <option value="Bitcon">Bitcoin</option>
+                            <option value="Bitcon">Ethereum</option>
+                            <option value="Bitcon">DOGECOIN</option>
+                            <option value="Bitcon">BNB</option>
+                        </select>
+                        <span>Enter your Wallet Address</span>
+                    <input className='Confirmation_Input' type="text" />
+                    <button className='Confirmation_Btn'
+                     onClick={()=>{
+                        setWalt(true)
+                    }}
+                    >Withdrawal</button>
                 </div>
             </div>
         </div>:
