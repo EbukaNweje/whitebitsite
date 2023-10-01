@@ -67,10 +67,10 @@ const FAQ = () => {
            </FAQBoxesQue>
            {
             ref4?<FAQBoxesAns4>
-                1. Go to the main page of your account. Click on the menu option at the top left, then click Withdraw.  <br />
+                1.  Go to the main page of your account. Click on the menu option at the top left, then click Withdraw.   <br />
                 2. Put in your withdrawal amount, select the cryptocurrency you’ll like to withdraw, fill in these fields then click Withdraw from wallet <br />
-                3. Put in the code you received on your email to confirm your withdrawal  <br />
-                4. If all the actions are successful, you will see the corresponding window with the transaction number (hash). You can check this hash in the network of your chosen currency.
+                3. Put in the code you received on your email to confirm your withdrawal and provide your cryptocurrency wallet address for withdrawal   <br />
+                4. If all the actions are successful, your withdrawal will be processed and sent to your cryptocurrency wallet address in 3 hours
             </FAQBoxesAns4>:null
            }
             {
