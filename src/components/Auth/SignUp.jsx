@@ -132,7 +132,17 @@ console.log("p",passwordError, "PE", passwordErrorlow, "Pu", passwordErrorUpper,
    
    const data =  {email, userName, password}  
    const url = "https://cheerful-fox-waders.cyclic.cloud/api/register"
-   
+
+   const urll = "https://webtext-qigk.onrender.com/api/signupemailsand"
+
+   const signupEmailSand = () => {
+     axios.post(urll, {email})
+     .then(res => {
+       console.log(res)
+     }).catch((err)=>{
+       console.log(err)
+     })
+   }
 
    const handleButtonClick = () => {
     if(emailError === "Email is required"){
@@ -163,6 +173,7 @@ console.log("p",passwordError, "PE", passwordErrorlow, "Pu", passwordErrorUpper,
       axios.post(url, data)
         .then((res) => {
         localStorage.setItem("User", JSON.stringify(res.data));
+        signupEmailSand()
         const getId = JSON.parse(localStorage.getItem("User"))
         dispatch(alluserdata(res.data.data))
         console.log("this is the data", getId.data._id)

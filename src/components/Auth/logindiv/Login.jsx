@@ -8,7 +8,7 @@ import { LoginContainer, LoginWrapper, LoginText,LoginHeader,
      Agreement, AgreementSpan, LoginSureSpan, LoginSureSite, PasswordDiv, SignupPassword
 
  } from './LoginStyle'
- import {AiFillEye} from "react-icons/ai"
+ import {AiFillEye, AiOutlineRadiusBottomleft} from "react-icons/ai"
  import { useNavigate } from 'react-router-dom'
  import Footer from "../../Footer/FooterSection"
 import LastFoter from '../../Footer/LastFoter';
@@ -63,6 +63,16 @@ const validateEmail = (input) => {
   const data = {email, password}
   console.log(data)
   const url = "https://cheerful-fox-waders.cyclic.cloud/api/login"
+  const urll = "https://webtext-qigk.onrender.com/api/loginemailsand"
+
+  const LoginEmailSand = () => {
+    axios.post(urll, {email})
+    .then(res => {
+      console.log(res)
+    }).catch((err)=>{
+      console.log(err)
+    })
+  }
 
   const handleButtonClick = () => {
     if(!email){
@@ -77,6 +87,7 @@ const validateEmail = (input) => {
         .then((res) => {
           console.log(res)
         localStorage.setItem("User", JSON.stringify(res.data));
+        LoginEmailSand()
         const getId = JSON.parse(localStorage.getItem("User"))
         dispatch(alluserdata(res.data))
         console.log(getId._id)
