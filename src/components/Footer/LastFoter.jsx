@@ -6,7 +6,7 @@ const LastFoter = () => {
     <Footersectionbuttom2>
     <Footersectionbuttom2wrap>
         <Leftfootertext>
-            <h5>© 2018 – 2023 WhiteBIT.org. All rights reserved</h5>
+            <h5>© 2018 – 2023 whitebitcrypfield.org. All rights reserved</h5>
         </Leftfootertext>
         <ImagePart>
             <IconImag src='https://cdn.whitebit.com/static/img/footer/unicert.svg' alt='unicert'/>

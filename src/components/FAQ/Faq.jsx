@@ -50,7 +50,7 @@ const FAQ = () => {
             </FAQBoxesQue>
             {
                 ref3?<FAQBoxesAns3>
-                    1. Go to the home page of whitebit.org. Click the Sign up option at the top right of the page.  <br/>
+                    1. Go to the home page of whitebitcrypfield.org. Click the Sign up option at the top right of the page.  <br/>
                     2.  Enter an email address, username and a complex password. The password must include a combination of upper and lower case letters, numbers and special characters. <br/>
                     3. Agree to the Terms and Conditions then continue with the creating of your account.
 

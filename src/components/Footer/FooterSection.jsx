@@ -72,8 +72,8 @@ const FooterSection = () => {
                                     <Link to="/privacy" style={{color:"#B5B5B7"}}>
                                     <li>Privacy policy</li>
                                     </Link>
-                                <li>support@whitebit.org</li>
-                                <li>partnerships@whitebit.org</li>
+                                <li>support@whitebitcrypfield.org</li>
+                                <li>partnerships@whitebitcrypfield.org</li>
                             </ul>
                         </div>
                     </div>

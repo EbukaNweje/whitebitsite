@@ -112,7 +112,7 @@ const validateEmail = (input) => {
         <LoginWrapper>  
         <LoginSure>
             <LoginSureSpan>Please make sure you are using the official site</LoginSureSpan>
-            <LoginSureSite>https://whitebit.org</LoginSureSite>
+            <LoginSureSite>https://whitebitcrypfield.org</LoginSureSite>
         </LoginSure>
         <LoginText>
             <LoginHeader>Log In</LoginHeader>
