@@ -10,9 +10,9 @@ const Component1 = () =>{
         <Container>
             <Wrapper>
                 <Wrap>
-                <H1>WhiteBit.org - Your ultimate cryptocurrency trading broker.</H1>
+                <H1>Whitebitcrypfield.org - Your ultimate cryptocurrency trading broker.</H1>
                 <Line></Line>
-                <Content>WhiteBit.org analysts will use predictions to purchase profitable digital currency at the right time. We come up with customized portfolio services that offer a one percent risk aversion. This has allowed traders to see better return on their total index over time. It also protected them from potential risks with the market.</Content>
+                <Content>whitebitcrypfield.org analysts will use predictions to purchase profitable digital currency at the right time. We come up with customized portfolio services that offer a one percent risk aversion. This has allowed traders to see better return on their total index over time. It also protected them from potential risks with the market.</Content>
                 </Wrap>
             </Wrapper>
         </Container>

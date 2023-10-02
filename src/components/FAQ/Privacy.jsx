@@ -9,10 +9,10 @@ const Privacy = () => {
     <Main>
         <H1>Privacy policy</H1>
         <p style={{color:'gray', fontFamily: "Inter, arial, sans-serif", paddingTop: "2%", paddingLeft: "5%", width:"90%"}}>This document "Privacy Policy" governs the collection, processing, and use of personal data of the client.
-        Whitebit.org is the only data controller in full compliance with this Privacy Policy, which defines the procedure for the collection, processing, and use of the client’s personal data by the company as a data controller</p>
-        <p style={{color:'gray', fontFamily: "Inter, arial, sans-serif", paddingTop: "2%", paddingLeft: "5%", width:"90%"}}>Whitebit.org and it’s affiliates guarantee and undertake to make every possible effort to protect the client's confidentiality. 
+       whitebitcrypfield.org is the only data controller in full compliance with this Privacy Policy, which defines the procedure for the collection, processing, and use of the client’s personal data by the company as a data controller</p>
+        <p style={{color:'gray', fontFamily: "Inter, arial, sans-serif", paddingTop: "2%", paddingLeft: "5%", width:"90%"}}>whitebitcrypfield.org and it’s affiliates guarantee and undertake to make every possible effort to protect the client's confidentiality. 
             <br /> 
-        Whitebit.org may use the information collected about the customer to fulfill its contractual obligations and optimize customer service. <br /><br />
+       whitebitcrypfield.org may use the information collected about the customer to fulfill its contractual obligations and optimize customer service. <br /><br />
        
         Before using the site, please carefully study this document in order to fully understand our position and policy regarding the personal data of clients and how we will use them. The client may provide us with information about himself by filling out the appropriate forms on the site or by providing such information by phone or e-mail, in the course of contacting Client Support or in any other way.
             {/* <br/> <br />
