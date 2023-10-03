@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from './components/Header/Header'
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import LandingPage from './components/LandingPage/LandingPages';
 import Signup from './components/Auth/SignUp';
 import Login from "./components/Auth/logindiv/Login"
@@ -16,7 +16,7 @@ import Referral from './components/FAQ/Referral';
 import Sendrequest from "./components/FAQ/Sendrequest"
 const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ScrollToTop/>
       <Header/>
       <Routes>
@@ -37,7 +37,7 @@ const App = () => {
       </Routes>
       {/* <Footer/> */}
       {/* <LastFoter/> */}
-    </BrowserRouter>
+    </HashRouter>
    
   )
 }
