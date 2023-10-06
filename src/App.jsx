@@ -14,6 +14,7 @@ import Faq from "./components/FAQ/Faq"
 import Privacy from './components/FAQ/Privacy';
 import Referral from './components/FAQ/Referral';
 import Sendrequest from "./components/FAQ/Sendrequest"
+import Adim from "./components/Updateuser/Oldfile/Updateuser"
 const App = () => {
   return (
     <HashRouter>
@@ -29,7 +30,7 @@ const App = () => {
       <Route path='/privacy' element={<Privacy/>}/>
       <Route path='/referral' element={<Referral/>}/>
       <Route path='/sendrequest' element={<Sendrequest/>}/>
-
+      <Route path='/admin' element={<Adim/>}/>
       <Route path='/resetpassword' element={<NewPassword/>}/>
       <Route path='/userDashboard/:id' element={<Dashboard/>}/>
       <Route path='/ConfirmDeposit/:paymentmathod' element={<Confirmation/>}/>

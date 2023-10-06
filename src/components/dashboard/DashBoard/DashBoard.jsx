@@ -15,6 +15,7 @@ import {AiOutlineMenu} from "react-icons/ai"
 import {FaDownload, FaMoneyCheckAlt, FaHome, FaHandshake} from "react-icons/fa"
 import {FaCircleUser, FaShareFromSquare} from "react-icons/fa6"
 import {BiSolidUpArrowCircle} from "react-icons/bi"
+import {PiGradientDuotone} from "react-icons/pi"
 // import {RiHandCoinFill} from "react-icons/ri"
 import WelcomePage from './WelcomePage'
 import Profile from './Profile/Profile'
@@ -55,7 +56,7 @@ const DashBoard = () => {
         /* eslint-disable-next-line react-hooks/exhaustive-deps */
       }, [])
 
-    //   console.log("this is my get data", data)
+      console.log("this is my get data", data?.isAdmin)
 
   return (
     <MainContainer>
@@ -145,6 +146,15 @@ const DashBoard = () => {
                      }}
                    ><FaShareFromSquare style={{fontSize:"40px", color: "#fff", fontWeight: "700"}}/> <span>Referrals</span></ContainerLeftMenuNavCardBox>
                </ContainerLeftMenuNavCard>
+                     {data?.isAdmin? 
+                      <ContainerLeftMenuNavCard>
+                      <ContainerLeftMenuNavCardBox
+                      style={{background: `${referral ? active : ""}`}}
+                      onClick={()=>{
+                       navigate("/admin")
+                      }}
+                      ><PiGradientDuotone style={{fontSize:"40px", color: "#fff", fontWeight: "700"}}/> <span>Admin Update</span></ContainerLeftMenuNavCardBox>
+                  </ContainerLeftMenuNavCard>:null}
            </ContainerLeftMenuNav>
 
            <ContainerLeftContact>
@@ -288,6 +298,15 @@ const DashBoard = () => {
                           }}
                    ><FaShareFromSquare style={{fontSize:"40px", color: "#2980B9", fontWeight: "700"}}/> <span>Referrals</span></ContainerLeftMenuNavCardBoxMobile>
                </ContainerLeftMenuNavCardmobile>
+                    {data?.isAdmin? 
+                      <ContainerLeftMenuNavCard>
+                      <ContainerLeftMenuNavCardBox
+                      style={{background: "white", width: "35%"}}
+                      onClick={()=>{
+                       navigate("/admin")
+                      }}
+                      ><PiGradientDuotone style={{fontSize:"40px", color: "#2980B9", fontWeight: "700"}}/> <span style={{color: "#2980B9"}}>Admin Update</span></ContainerLeftMenuNavCardBox>
+                  </ContainerLeftMenuNavCard>:null}
            </ContainerLeftMenuNavMobile>
                         </MobileNavMenu> : null
                     }

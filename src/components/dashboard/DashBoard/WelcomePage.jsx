@@ -44,19 +44,19 @@ const WelcomePage = ({myPlans, myHome}) => {
 
                     <PaymentBoxdiv>
                         <PaymentBox>
-                            <Div> <TextDive><Span>Account Balance</Span> <p>${data?.currentBalance}.00</p></TextDive> <RiMoneyDollarBoxFill  style={{marginRight: "20px", fontSize: "35px", color:"#2980B9"}}/></Div>
+                            <Div> <TextDive><Span>Account Balance</Span> <p>${data?.accountBalance}.00</p></TextDive> <RiMoneyDollarBoxFill  style={{marginRight: "20px", fontSize: "35px", color:"#2980B9"}}/></Div>
                         </PaymentBox>
                         <PaymentBox>
-                        <Div> <TextDive><Span>Total Profit</Span> <p>${data?.totalInvest}.00</p></TextDive> <FaCoins  style={{marginRight: "20px", fontSize: "35px", color:"#2980B9"}}/></Div>
+                        <Div> <TextDive><Span>Total Profit</Span> <p>${data?.totalProfit}.00</p></TextDive> <FaCoins  style={{marginRight: "20px", fontSize: "35px", color:"#2980B9"}}/></Div>
                         </PaymentBox>
                         <PaymentBox>
-                            <Div> <TextDive><Span>Bonus</Span> <p>${data?.interestWalletbalance}.00</p></TextDive> <FaGift  style={{marginRight: "20px", fontSize: "35px", color:"#2980B9"}}/></Div>
+                            <Div> <TextDive><Span>Bonus</Span> <p>${data?.bonus}.00</p></TextDive> <FaGift  style={{marginRight: "20px", fontSize: "35px", color:"#2980B9"}}/></Div>
                         </PaymentBox>
                     </PaymentBoxdiv>
 
                     <PaymentBoxdiv>
                         <PaymentBox>
-                        <Div> <TextDive><Span>Trading Accounts</Span> <p>${data?.bitCoinYellow}.00</p></TextDive> <GiHamburgerMenu  style={{marginRight: "20px", fontSize: "35px", color:"#2980B9"}}/></Div>
+                        <Div> <TextDive><Span>Trading Accounts</Span> <p>${data?.tradingAccounts}.00</p></TextDive> <GiHamburgerMenu  style={{marginRight: "20px", fontSize: "35px", color:"#2980B9"}}/></Div>
                         </PaymentBox>
                         <PaymentBox>
                             <Div> <TextDive><Span>Referral Bonus</Span> <p>${data?.ref}.00</p></TextDive> <FaGifts  style={{marginRight: "20px", fontSize: "35px", color:"#2980B9"}}/></Div>
@@ -68,7 +68,7 @@ const WelcomePage = ({myPlans, myHome}) => {
 
                     <PaymentBoxdiv>
                         <PaymentBox>
-                        <Div> <TextDive><Span>Total Withdrawal</Span> <p>${data?.totalWithdraw}.00</p></TextDive> <BsArrowUpSquareFill  style={{marginRight: "20px", fontSize: "35px", color:"#2980B9"}}/></Div>
+                        <Div> <TextDive><Span>Total Withdrawal</Span> <p>${data?.totalWithdrawal}.00</p></TextDive> <BsArrowUpSquareFill  style={{marginRight: "20px", fontSize: "35px", color:"#2980B9"}}/></Div>
                         </PaymentBox>
                     </PaymentBoxdiv>
                 </AccountSummary>
