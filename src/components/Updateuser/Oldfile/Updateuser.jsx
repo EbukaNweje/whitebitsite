@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import {Container, From, Wrapper, TextDiv, InputData,Button,UpdateDiv } from "./UpdateuserStyle"
-import Axios from "axios"
-import Swal from 'sweetalert2'
+// import Axios from "axios"
+// import Swal from 'sweetalert2'
 import {AiFillDelete} from "react-icons/ai"
 import axios from 'axios'
 

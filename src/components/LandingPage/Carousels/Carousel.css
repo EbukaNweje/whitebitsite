@@ -42,7 +42,8 @@
     }
 
     .Slick_Carousels{
-        height: 40vh ;
+        height: 30vh;
+
         /* background: red; */
     }
 
@@ -57,11 +58,13 @@
             width: 99%;
         }
         .Carousel_Container {
-            height: 50vh;
+            height: 30vh;
+            /* background: #000; */
         }
     
         .Slick_Carousels{
-            height: 40vh ;
+            height: 20vh ;
+            width: 30px;
             /* background: red; */
         }
     
