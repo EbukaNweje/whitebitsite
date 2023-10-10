@@ -43,12 +43,13 @@ function Carousel() {
   const settings = {
     dots: true,
       infinite: true,
-      speed: 500,
+      speed: 600,
       slidesToShow: 4,
       slidesToScroll: 4,
       initialSlide: 0,
       nextArrow: <SampleNextArrow/>,
       prevArrow: <SamplePrevArrow/>,
+      autoplay: true,
       responsive: [
         {
           breakpoint: 1024,
