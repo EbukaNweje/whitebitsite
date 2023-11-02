@@ -25,7 +25,7 @@ function Deposits() {
 
       const handlAmountFild = () =>{
         if(amount === "0.00"){
-            setAmountError('You can not leave this Field Empty');
+            setAmountError('You can not leave this field empty');
         }else {
             if(btc === true){
                 setBnb(false)
@@ -96,7 +96,7 @@ function Deposits() {
                          <p style={{marginTop: "-3%", marginLeft: "2%", color: "red", fontSize: "12px"}}>{amountError}</p>
                     </div>
                     <div className='Amount_Bot'>
-                        <span className='Ammount_Label'>Choose Payment Method from the list below</span>
+                        <span className='Ammount_Label'>Choose payment method from the list below</span>
                         <div className='Choose_Div'>
                             <div className='Transfer_Bitcoin'>
                             <div className='Transfer_Div'>
@@ -133,7 +133,7 @@ function Deposits() {
                     <button className='Amount_Btn'  onClick={handlAmountFild}
                         disabled={isButtonDisabled} 
                         style={{background: `${isButtonDisabled ? "#E0E0E5" : "#2980B9"}`}}
-                    >{btc? ("Bitcoin payment"): bnb?("Bnb payment"): ethereum?("Ethereum payment"): dogecoin?("Dogcoin payment"): "Proceed to payment"}</button>
+                    >{btc? ("Bitcoin payment"): bnb?("Bnb payment"): ethereum?("Ethereum payment"): dogecoin?("Dogecoin payment"): "Proceed to payment"}</button>
                 </div>
                 <div className='Deposit_Total'>
                     <div className='Total_Card'>

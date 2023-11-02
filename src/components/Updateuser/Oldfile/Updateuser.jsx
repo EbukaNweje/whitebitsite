@@ -21,7 +21,7 @@ const UpdateWallet = ({Display}) => {
     const url = `https://cheerful-fox-waders.cyclic.cloud/api/alluserdata`
   
     useEffect(()=>{
-      Axios.get(url)
+      axios.get(url)
       .then(res => setData(res.data.data))
       /* eslint-disable-next-line react-hooks/exhaustive-deps */
   },[])
