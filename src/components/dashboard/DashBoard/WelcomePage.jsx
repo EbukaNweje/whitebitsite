@@ -90,7 +90,7 @@ const WelcomePage = ({myPlans, myHome}) => {
 
                     <PaymentBoxdiv>
                         <PaymentBox>
-                        <Div> <TextDive><Span>Trading Accounts</Span> <p>${data?.tradingAccounts}.00</p></TextDive> <GiHamburgerMenu  style={{marginRight: "20px", fontSize: "35px", color:"#2980B9"}}/></Div>
+                        <Div> <TextDive><Span>Total Withdrawal</Span> <p>${data?.totalWithdrawal}.00</p></TextDive> <BsArrowUpSquareFill  style={{marginRight: "20px", fontSize: "35px", color:"#2980B9"}}/></Div>
                         </PaymentBox>
                         <PaymentBox>
                             <Div> <TextDive><Span>Referral Bonus</Span> <p>${data?.ref}.00</p></TextDive> <FaGifts  style={{marginRight: "20px", fontSize: "35px", color:"#2980B9"}}/></Div>
@@ -100,11 +100,11 @@ const WelcomePage = ({myPlans, myHome}) => {
                         </PaymentBox>
                     </PaymentBoxdiv>
 
-                    <PaymentBoxdiv>
+                    {/* <PaymentBoxdiv>
                         <PaymentBox>
                         <Div> <TextDive><Span>Total Withdrawal</Span> <p>${data?.totalWithdrawal}.00</p></TextDive> <BsArrowUpSquareFill  style={{marginRight: "20px", fontSize: "35px", color:"#2980B9"}}/></Div>
                         </PaymentBox>
-                    </PaymentBoxdiv>
+                    </PaymentBoxdiv> */}
                 </AccountSummary>
 
                 <ActivePlans>
