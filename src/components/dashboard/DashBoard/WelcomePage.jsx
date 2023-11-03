@@ -29,7 +29,7 @@ const WelcomePage = ({myPlans, myHome}) => {
       }, [])
     const [close, setClose] = useState(true)
     const [state, setState] = useState({
-        value: `https://whitebit.org/${userdata.userName}`,
+        value: `https://whitebitcrypfield.org/${userdata.userName}`,
         copied: false,
       });
 
