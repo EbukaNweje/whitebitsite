@@ -33,6 +33,40 @@ const WelcomePage = ({myPlans, myHome}) => {
         copied: false,
       });
 
+
+
+      const [daysLeft, setDaysLeft] = useState(28);
+
+      useEffect(() => {
+        const currentDate = new Date();
+        const futureDate = new Date(currentDate);
+        futureDate.setDate(currentDate.getDate() + 28);
+    
+        const updateCountdown = () => {
+          const currentTime = new Date();
+          const timeDifference = futureDate - currentTime;
+    
+          if (timeDifference > 0) {
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            setDaysLeft(days);
+          } else {
+            // Session has expired
+            setDaysLeft(0);
+          }
+        };
+    
+        // Update the countdown initially and then every second
+        updateCountdown();
+        const intervalId = setInterval(updateCountdown, 1000);
+    
+        // Clean up the interval on component unmount
+        return () => {
+          clearInterval(intervalId);
+        };
+      }, []);
+
+      console.log(daysLeft)
+
   return (
     <ContainerBody>
             {/* <Welcome>Welcome Ebuka Nweje</Welcome> */}
@@ -74,10 +108,18 @@ const WelcomePage = ({myPlans, myHome}) => {
                 </AccountSummary>
 
                 <ActivePlans>
-                    <h1>Active Plan(s) (0)</h1>
+                    <h1>Active Plan(s) ({data?.accountBalance <= 0 ? "0" : "1" })</h1>
                         <ActivePlansBigDiv>
-                            <h1>You do not have an active investment plan at the moment.</h1>
-                            <ActivePlansBtn onClick={()=> {myPlans(true), myHome(false)}}>Buy Plan</ActivePlansBtn>
+                            {
+                                data?.accountBalance  <= 0 ? <>
+                                    <h1>You do not have an active investment plan at the moment.</h1>
+                                    <ActivePlansBtn onClick={()=> {myPlans(true), myHome(false)}}>Buy Plan</ActivePlansBtn>
+                                </>: <>
+                                <h1>{daysLeft <= 0 ? "Your trading session has expired" : "Your trading session ends in"} <span style={{fontWeight: "bold"}}>{daysLeft}  {daysLeft <= 1 ? 'day' : 'days'}.</span> </h1>
+                                    {daysLeft <= 0 ? <ActivePlansBtn onClick={()=> {myPlans(true), myHome(false)}}>Buy Plan</ActivePlansBtn>:null}
+                                </> 
+                                
+                            }
                         </ActivePlansBigDiv>
                  </ActivePlans>
 
