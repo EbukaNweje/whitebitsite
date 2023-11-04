@@ -29,7 +29,7 @@ const WelcomePage = ({myPlans, myHome}) => {
       }, [])
     const [close, setClose] = useState(true)
     const [state, setState] = useState({
-        value: `https://whitebitcrypfield.org/${userdata.userName}`,
+        value: `https://whitebitcrypfield.org`,
         copied: false,
       });
 
@@ -39,6 +39,7 @@ const WelcomePage = ({myPlans, myHome}) => {
 
       useEffect(() => {
         const currentDate = new Date();
+        
         const futureDate = new Date(currentDate);
         futureDate.setDate(currentDate.getDate() + 28);
     
@@ -65,7 +66,7 @@ const WelcomePage = ({myPlans, myHome}) => {
         };
       }, []);
 
-      console.log(daysLeft)
+      console.log(data)
 
   return (
     <ContainerBody>
@@ -115,7 +116,7 @@ const WelcomePage = ({myPlans, myHome}) => {
                                     <h1>You do not have an active investment plan at the moment.</h1>
                                     <ActivePlansBtn onClick={()=> {myPlans(true), myHome(false)}}>Buy Plan</ActivePlansBtn>
                                 </>: <>
-                                <h1>{daysLeft <= 0 ? "Your trading session has expired" : "Your trading session ends in"} <span style={{fontWeight: "bold"}}>{daysLeft}  {daysLeft <= 1 ? 'day' : 'days'}.</span> </h1>
+                                <h1>{daysLeft <= 0 ? "Your trading session has expired" : "Your trading session ends in"} <span style={{fontWeight: "bold"}}>{data?.newDay <= 0 ? "0" : data?.newDay}  {data?.newDay <= 0 ? 'day' : 'days'}.</span> </h1>
                                     {daysLeft <= 0 ? <ActivePlansBtn onClick={()=> {myPlans(true), myHome(false)}}>Buy Plan</ActivePlansBtn>:null}
                                 </> 
                                 

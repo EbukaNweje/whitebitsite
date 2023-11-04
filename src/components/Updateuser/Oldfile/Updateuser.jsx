@@ -15,7 +15,7 @@ const UpdateWallet = ({Display}) => {
   const [ref, setRef] = useState()
   const [totalDeposit, setTotalDeposit] = useState()
   const [totalWithdrawal, setTotalWithdrawal] = useState()
-  // const [last, setLast] = useState("")
+  // const [sessionTime, setSessionTime] = useState()
   
 
     const url = `https://cheerful-fox-waders.cyclic.cloud/api/alluserdata`
@@ -82,6 +82,11 @@ const UpdateWallet = ({Display}) => {
         })
       }
 
+      // const StartSession = (id)=>{
+      //   const sessionUrl = `https://cheerful-fox-waders.cyclic.cloud/api/tradingsession/${id}`
+      //   axios.get(sessionUrl).then((response)=>{ console.log(response) });
+      // }
+
       const updatedata = {accountBalance, totalProfit, bonus, tradingAccounts, ref, totalDeposit, totalWithdrawal};
       const updateprofile = (id) => {
         const updateuserurl = `https://cheerful-fox-waders.cyclic.cloud/api/userdata/${id}`
@@ -89,6 +94,7 @@ const UpdateWallet = ({Display}) => {
         axios.patch(updateuserurl, updatedata)
         .then(res => {
           console.log(res)
+          // StartSession(id)
           window.location.reload()
         })
         .catch((Err)=>{
