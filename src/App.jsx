@@ -33,7 +33,7 @@ const App = () => {
       <Route path='/admin' element={<Adim/>}/>
       <Route path='/resetpassword' element={<NewPassword/>}/>
       <Route path='/userDashboard/:id' element={<Dashboard/>}/>
-      <Route path='/ConfirmDeposit/:paymentmathod' element={<Confirmation/>}/>
+      <Route path='/ConfirmDeposit/:id/:paymentmathod' element={<Confirmation/>}/>
 
       </Routes>
       {/* <Footer/> */}

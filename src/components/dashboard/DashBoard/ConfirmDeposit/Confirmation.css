@@ -192,6 +192,53 @@
     background-color: rgb(197, 12, 12);
 }
 
+
+.SuccessPaid {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background: rgba(16, 0, 0, 0.411);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.PayCon {
+    width: 40%;
+    height: 40%;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.PayCon h3{
+    font-size: 20px;
+    font-family: 'poppins';
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width:768px) {
+    .PayCon {
+        width: 85%;
+        padding: 5px;
+        height: 25%;
+    }
+    
+    .PayCon h3 {
+        font-size: 14px;
+    }
+    
+    .PayCon button{
+        height: 40px;
+    }
+}
 @media screen and (max-width:430px) {
     .Confirmation_Page {
         width: 100%;
@@ -259,5 +306,19 @@
 .Preview_Btn {
     width: 80%;
     height: 50px;
+}
+
+.PayCon {
+    width: 85%;
+    padding: 5px;
+    height: 25%;
+}
+
+.PayCon h3 {
+    font-size: 14px;
+}
+
+.PayCon button{
+    height: 40px;
 }
 }

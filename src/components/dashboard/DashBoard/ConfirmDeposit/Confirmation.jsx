@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Confirmation.css'
 import {useParams} from "react-router-dom";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import  Axios  from 'axios';
 
 
 function Confirmation() {
@@ -9,9 +10,10 @@ function Confirmation() {
     const [remove, setRemove] = useState(false)
     const [proofShown, setProofShown] = useState("")
     const [change, setChange] = useState(false)
-    const {paymentmathod} = useParams()
+    const [pay, setpay] = useState(false)
+    const {paymentmathod, id} = useParams()
     // const [paymentText, setPaymantText] = useState()
-    console.log(paymentmathod)
+    // console.log(id)
     
     const [state, setState] = useState({
         value: `${paymentmathod === "BitcoinPayment"? ("bc1qcxum393n73ywftqnm77kjg7kc0qtav5s9fay5a"): paymentmathod === "EthereumPayment"? ("0x02Af0f6631ff12a34cf6bf905a7b234683A770cA"): paymentmathod ==="DogecoinPayment"? ("DNRDKX9ZySoFfXXsbhVYrmGfZTRnMBNhLp"): paymentmathod==="BnbPayment"?("bnb1urf2a2keqeukmpqn3eyacp53s7zhhpy62cq6ck"):"Chosse a Payment Method"}`,
@@ -19,6 +21,20 @@ function Confirmation() {
       });
 
       const getAmount = JSON.parse(localStorage.getItem("Amounttopay"))
+      const Amount  = JSON.parse(localStorage.getItem("Amounttopay"))
+        console.log(Amount)
+
+      const url = `https://webtext-qigk.onrender.com/api/sendpayment/${id}`
+      
+      const payNow = ()=> {
+        Axios.post(url, {Amount})
+        .then(res => {
+          console.log(res)
+          setpay(true)
+        }).catch((err)=>{
+          console.log(err)
+        })
+      }
     // setProofShown(URL.createObjectURL(proof))
   return (
     <div className='Confirmation_Page'>
@@ -70,9 +86,19 @@ function Confirmation() {
                     <label className='Payment' htmlFor="Payment">Select your proof of payment</label>:null
                    }
                 </div>
-                <button className='Paynow_Btn' style={{background:"green", color:"white"}}>Pay now</button>
+                <button className='Paynow_Btn' style={{background:"green", color:"white"}} onClick={payNow}>Pay now</button>
             </div>
         </div>
+
+             {
+                    pay ? 
+                    <div className='SuccessPaid'>
+                <div className='PayCon'>
+                    <h3>You have Successfully Made A Deposit </h3>
+                    <button style={{width: "50%", fontSize:"15px"}} onClick={()=>setpay(false)}>Ok</button>
+                </div>
+         </div>: null
+        }
     </div>
   )
 }

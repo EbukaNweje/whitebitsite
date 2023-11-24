@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import './Deposits.css'
 import { useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 function Deposits() {
+    const {id} = useParams()
     const nav = useNavigate()
     const [btc, setBtc] = useState(false)
     const [bnb, setBnb] = useState(false)
@@ -31,25 +33,25 @@ function Deposits() {
                 setBnb(false)
                 setEthereum(false)
                 setDogecoin(false)
-                nav("/ConfirmDeposit/BitcoinPayment")
+                nav(`/ConfirmDeposit/${id}/BitcoinPayment`)
                 localStorage.setItem("Amounttopay", JSON.stringify(amount))
             }else if(bnb === true){
                 setBtc(false)
                 setEthereum(false)
                 setDogecoin(false)
-                nav("/ConfirmDeposit/BnbPayment")
+                nav(`/ConfirmDeposit/${id}/BnbPayment`)
                 localStorage.setItem("Amounttopay", JSON.stringify(amount))
             }else if(ethereum === true){
                 setBnb(false)
                 setBnb(false)
                 setDogecoin(false)
-                nav("/ConfirmDeposit/EthereumPayment")
+                nav(`/ConfirmDeposit/${id}/EthereumPayment`)
                 localStorage.setItem("Amounttopay", JSON.stringify(amount))
             }else if(dogecoin === true){
                 setBnb(false)
                 setEthereum(false)
                 setBtc(false)
-                nav("/ConfirmDeposit/DogecoinPayment")
+                nav(`/ConfirmDeposit/${id}/DogecoinPayment`)
                 localStorage.setItem("Amounttopay", JSON.stringify(amount))
             }
         }
@@ -82,6 +84,8 @@ function Deposits() {
     //         localStorage.setItem("Amounttopay", JSON.stringify(amount))
     //     }
     // }
+
+    // console.log("thisis the id",id)
 
 
   return (
