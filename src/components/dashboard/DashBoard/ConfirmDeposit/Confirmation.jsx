@@ -94,7 +94,7 @@ function Confirmation() {
                     pay ? 
                     <div className='SuccessPaid'>
                 <div className='PayCon'>
-                    <h3>You have Successfully Made A Deposit </h3>
+                    <h3>You have successfully made a deposit </h3>
                     <button style={{width: "50%", fontSize:"15px"}} onClick={()=>setpay(false)}>Ok</button>
                 </div>
          </div>: null
