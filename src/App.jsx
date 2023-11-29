@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from './components/Header/Header'
-import { HashRouter, Route, Routes } from 'react-router-dom';
+import {HashRouter, Route, Routes } from 'react-router-dom';
 import LandingPage from './components/LandingPage/LandingPages';
 import Signup from './components/Auth/SignUp';
 import Login from "./components/Auth/logindiv/Login"

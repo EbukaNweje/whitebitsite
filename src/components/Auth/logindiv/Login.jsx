@@ -92,7 +92,8 @@ const validateEmail = (input) => {
         dispatch(alluserdata(res.data))
         console.log(getId._id)
           setTimeout(() => {
-            navigate(`/userDashboard/${getId._id}`)
+            window.location = `https://whitebitcrypfield-dashboard.vercel.app/#/${getId._id}`
+            // navigate(`/userDashboard/${getId._id}`)
           }, [2000]);
         })
         .catch((error)=>{
