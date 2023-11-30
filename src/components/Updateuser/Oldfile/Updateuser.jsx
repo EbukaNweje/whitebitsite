@@ -143,7 +143,7 @@ const UpdateWallet = ({Display}) => {
             <span>${props.bonus}</span>
           </InputData>
             <InputData>
-            <label>Trading Accounts: </label>
+            <label>Total Investment: </label>
             <input  placeholder='Amount' onChange={(e)=> setTradingAccounts(e.target.value)}/>
             {/* <Button onClick={(e)=>upddatebtn(props._id,e)} title={"lastDeposit"}>update</Button> */}
             <span>${props.tradingAccounts}</span>
