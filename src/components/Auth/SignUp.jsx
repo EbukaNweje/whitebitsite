@@ -246,7 +246,7 @@ console.log("p",passwordError, "PE", passwordErrorlow, "Pu", passwordErrorUpper,
                 ref?<SignupEmail style={{width:"100%", marginBottom: "5%"}} placeholder='Code' type='text'/>:null
             }   
         </SignupRefHeaderDiv>
-            <SignupPrivacy><SignupCheck type='checkbox'/>I agree to the <Privacy>User agreement</Privacy> and <Privacy>Privacy policy</Privacy></SignupPrivacy>
+            <SignupPrivacy><SignupCheck type='checkbox'/>I agree to the <Privacy onClick={()=>navigate("/privacy")}>User agreement</Privacy> and <Privacy onClick={()=>navigate("/privacy")}>Privacy policy</Privacy></SignupPrivacy>
             <SignupPrivacy><SignupCheck style={{width:"60px",}} type='checkbox'/><span style={{ marginLeft:"-11px", color: "rgba(29, 37, 47, 0.7)"}}>I hereby confirm that I am neither a citizen nor a resident of the following countries: 
             <Tippy style={{backgroundColor:"white"}} content={<span style={{fontSize: "12px", fontFamily:"Inter, arial, sans-serif", fontWeight:"500", color:"white" }}>Afghanistan, Territory of Guam, Iran, Yemen, Libya, State of Palestine, Puerto Rico, Somalia, the Democratic People’s Republic of Korea, The Northern Mariana Islands, Syria, Russian Federation, Republic of Belarus, Republic of Sudan, Transnistria, temporarily occupied territories of Turkish Republic of Northern Cyprus, Western Sahara, Federal Republic of Ambazonia, Kosovo, South Sudan, Nicaragua, Trinidad and Tobago, Venezuela, and temporarily occupied territories of Ukraine.</span>}>
             <ValidationImg src="https://cdn.whitebit.com/static/img/ui-kit/24px/info.svg" alt="" />

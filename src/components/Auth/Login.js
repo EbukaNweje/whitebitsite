@@ -292,6 +292,7 @@ export const SignupCheck= styled.input`
 export const Privacy = styled.span`
     font-size: 16px;
     color:#246ACC;
+    cursor:pointer;
 `
 
 export const SignupBtn = styled.button`
