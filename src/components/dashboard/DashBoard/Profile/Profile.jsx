@@ -20,8 +20,8 @@ export default function Profile() {
   const userinfo = {fullName, userName,email,phoneNumber}
 
 
-  const url = `https://cheerful-fox-waders.cyclic.cloud/api/userdata/${id}`
-  const updateuserurl = `https://cheerful-fox-waders.cyclic.cloud/api/userdata/${id}`
+  const url = `https://white-bit-back-endnew.vercel.app/api/userdata/${id}`
+  const updateuserurl = `https://white-bit-back-endnew.vercel.app/api/userdata/${id}`
 
   useEffect(() =>{
       axios.get(url).then(res => setData(res.data.data))

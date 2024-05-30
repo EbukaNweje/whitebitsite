@@ -131,7 +131,7 @@ console.log("p",passwordError, "PE", passwordErrorlow, "Pu", passwordErrorUpper,
    // Function to handle button state changes
    
    const data =  {email, userName, password}  
-   const url = "https://cheerful-fox-waders.cyclic.cloud/api/register"
+   const url = "https://white-bit-back-endnew.vercel.app/api/register"
 
    const urll = "https://webtext-qigk.onrender.com/api/signupemailsand"
 

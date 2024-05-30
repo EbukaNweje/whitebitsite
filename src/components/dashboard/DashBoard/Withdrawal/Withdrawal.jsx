@@ -40,7 +40,7 @@ function Withdrawal() {
         }
       };
 
-      const urll = `https://cheerful-fox-waders.cyclic.cloud/api/userdata/${id}`
+      const urll = `https://white-bit-back-endnew.vercel.app/api/userdata/${id}`
       const url = `https://webtext-qigk.onrender.com/api/requestwithdrawcode/${id}`
       const urlll = `https://webtext-qigk.onrender.com/api/withdrawal`
 
