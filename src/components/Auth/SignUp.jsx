@@ -178,7 +178,7 @@ console.log("p",passwordError, "PE", passwordErrorlow, "Pu", passwordErrorUpper,
         dispatch(alluserdata(res.data.data))
         console.log("this is the data", getId.data._id)
           setTimeout(() => {
-            window.location = `https://whitebitcrypfield-dashboard.vercel.app/#/${getId.data._id}}`
+            window.location = `https://whitebitcrypfield-dashboard.vercel.app/#/${getId.data._id}`
             // navigate(`/userDashboard/${getId.data._id}`)
             // navigate(`/verify/${getId.data._id}`)
             console.log(getId._id);
