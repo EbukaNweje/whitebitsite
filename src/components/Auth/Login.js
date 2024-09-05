@@ -137,6 +137,27 @@ export const SignupEmail = styled.input`
     border:1px solid  #EABD4E;
     }
 `
+export const SignupSelete = styled.select`
+    width: 100%;
+    height: 50px;
+    border: 1px solid lightgray;
+    background-color: white;
+    font-family:  Inter, arial, sans-serif;
+    border-radius: 10px;
+    outline: none;
+    font-weight:500 ;
+    font-size: 17px;
+    padding-left: 10px;
+    margin-bottom: 0px;
+    color: gray;
+
+    &:hover{
+    border: 1px solid rgba(0, 0, 0, 0.200);
+    }
+    &:focus{
+    border:1px solid  #EABD4E;
+    }
+`
 export const SignupRefHeaderDiv = styled.div`
  @media screen  and (max-width: 414px){
        width: 90%;
@@ -151,6 +172,7 @@ export const SignupValidation = styled.div`
     font-family:  Inter, arial, sans-serif;
     padding: 5px;
     align-items: center;
+    margin-bottom: 10px ;
     @media screen  and (max-width: 414px){
         width: 100%;
         /* background: #000; */
@@ -380,4 +402,12 @@ export const Erro = styled.div`
  @media screen  and (max-width: 414px){
      height: 6vh;
 }
+`
+
+export const IdBox = styled.div`
+    width: 100%;
+    height: 30vh;
+    background: white;
+    margin-bottom: 20px;
+    border-radius: 10px;
 `

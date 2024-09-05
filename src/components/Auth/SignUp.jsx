@@ -5,7 +5,7 @@ import { SignupContainer, SignupWrapper, SignupText,SignupHeader,
     SignupValidation, CharValidation, LowerValidation, CapValidation,
     NumValidation, SymValidation, ValidationImg, SignupRef, RefImg,
     SignupRefHeader, SignupPrivacy, SignupCheck, Privacy, SignupBtn,SignupRefHeaderDiv,
-    PasswordDiv, SignupPassword, Erro
+    PasswordDiv, SignupPassword, Erro, IdBox, SignupSelete
 
  } from './Login'
  import {AiFillEye} from "react-icons/ai"
@@ -18,6 +18,8 @@ import { alluserdata }from "../Global/ProductState"
 import { useDispatch } from "react-redux";
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'; // optional
+import Dropzone from "react-dropzone";
+import { FiDownloadCloud } from "react-icons/fi";
 //  import { ToastContainer, toast } from 'react-toastify';
 //   import 'react-toastify/dist/ReactToastify.css';
 // import AOS from 'aos'
@@ -30,8 +32,16 @@ const [show, setShow] = useState(true)
 // const [vali, setVali] = useState(false)
 const [email, setEmail] = useState()
 const [password, setPassword] = useState("")
+const [fullName, setFullName] = useState()
 const [userName, setUsername] = useState()
+const [phoneNumber, setPhoneNumber] = useState()
+const [address, setAddress] = useState()
+const [counrty, setCounrty] = useState()
 const navigate = useNavigate();
+const [counrtyError, setCounrtyError] = useState();
+const [addressError, setAddressError] = useState();
+const [ffullNameError, setFullNameErrorr] = useState();
+const [phoneNumberError, setPhoneNumberError] = useState();
 const [passwordError, setPasswordError] = useState();
 const [passwordErrorlow, setPasswordErrorLow] = useState("");
 const [passwordErrorUpper, setPasswordErrorUpper] = useState();
@@ -41,6 +51,8 @@ const [emailError, setEmailError] = useState('');
 const [usernameError, setUsernameError] = useState('');
 const [error, setError] = useState({ero: false, msg: ""});
 const [isButtonDisabled, setButtonDisabled] = useState(false);
+const [dropzone, setDropzone] = useState()
+
 const dispatch = useDispatch()
 
 const validateEmail = (input) => {
@@ -53,6 +65,7 @@ const validateEmail = (input) => {
     // Check if the input string contains at least one lowercase character
     return /[a-z]/.test(input);
   };
+  
   const containsUpperrcase = (input) => {
     // Check if the input string contains at least one lowercase character
     return /[A-Z]/.test(input);
@@ -89,6 +102,46 @@ const validateEmail = (input) => {
         setUsernameError('Username is required');
     }else {
       setUsernameError('');
+    }
+  };
+  const handleFullnameChange = (e) => {
+    const newFullName = e.target.value;
+    setFullName(newFullName);
+    // Validate the email
+    if(newFullName.trim() === '') {
+        setFullNameErrorr('Fullname is required');
+    }else {
+      setFullNameErrorr('');
+    }
+  };
+  const handlePhoneNumberChange = (e) => {
+    const newPhoneNumber = e.target.value;
+    setPhoneNumber(newPhoneNumber);
+    // Validate the email
+    if(newPhoneNumber.trim() === '') {
+        setPhoneNumberError('Phone Number is required');
+    }else {
+      setPhoneNumberError('');
+    }
+  };
+  const handleAddressChange = (e) => {
+    const newAdddress = e.target.value;
+    setAddress(newAdddress);
+    // Validate the email
+    if(newAdddress.trim() === '') {
+        setAddressError(' Address is required');
+    }else {
+      setAddressError('');
+    }
+  };
+  const handlCounrtyChange = (e) => {
+    const country = e.target.value;
+    setCounrty(country);
+    // Validate the email
+    if(country.trim() === '') {
+        setCounrtyError('Country is required');
+    }else {
+      setCounrtyError('');
     }
   };
 
@@ -130,7 +183,10 @@ const handlePasswordChange = (e) => {
 console.log("p",passwordError, "PE", passwordErrorlow, "Pu", passwordErrorUpper, "Pn", passwordErrorNumber, "pS", passwordErrorSymbol)
    // Function to handle button state changes
    
-   const data =  {email, userName, password}  
+   const data =  {email, userName, password, fullName, counrty, phoneNumber, imageId: dropzone}  
+
+   
+
    const url = "https://white-bit-back-endnew.vercel.app/api/register"
 
    const urll = "https://webtext-qigk.onrender.com/api/signupemailsand"
@@ -170,7 +226,25 @@ console.log("p",passwordError, "PE", passwordErrorlow, "Pu", passwordErrorUpper,
     }    
     else if (passwordError === false && passwordErrorlow === false && passwordErrorUpper  === false && passwordErrorNumber === false && passwordErrorSymbol === false) {
       setButtonDisabled(!isButtonDisabled);
-      axios.post(url, data)
+      console.log(data)
+
+      let formData = new FormData();
+      formData.append("email", email);
+      formData.append("userName", userName);
+      formData.append("password", password);
+      formData.append("fullName", fullName);
+      formData.append("counrty", counrty);
+      formData.append("phoneNumber", phoneNumber);
+      formData.append("imageId",  dropzone);
+      
+      const config = {
+        headers: {
+          "content-type": "multipart/formData"
+        }
+      }
+
+
+      axios.post(url, formData, config)
         .then((res) => {
         localStorage.setItem("User", JSON.stringify(res.data));
         signupEmailSand()
@@ -190,6 +264,7 @@ console.log("p",passwordError, "PE", passwordErrorlow, "Pu", passwordErrorUpper,
           setButtonDisabled(isButtonDisabled);
           setError({ero: true, msg: error.data.message})
       });
+      
       // Perform form submission logic here
         // console.log('submitted to Api');
         // setButtonDisabled(!isButtonDisabled);
@@ -203,6 +278,24 @@ console.log("p",passwordError, "PE", passwordErrorlow, "Pu", passwordErrorUpper,
       }
   };
 
+
+
+  
+
+  const addFilesToDropzone = (files)=> {
+    let files_with_preview = [];
+    files.map(file => {
+      file["preview"] = URL.createObjectURL(file);
+      files_with_preview.push(file);
+    });
+
+    const new_files = [...files_with_preview];
+    setDropzone(new_files[0]?.preview);
+  }
+
+console.log("this is it",dropzone)
+
+
   return (
     <>
          {/* <div style={{width:"100%", height:"8vh", background:"black"}}></div> */}
@@ -213,11 +306,64 @@ console.log("p",passwordError, "PE", passwordErrorlow, "Pu", passwordErrorUpper,
             <SignupHeader>Create account</SignupHeader>
             <SignupSubHeader>Already have an account? <LoginRoute onClick={()=>navigate("/login")}> Log In</LoginRoute></SignupSubHeader>
         </SignupText>
+            <div className='Upload'> Upload Means of Identification</div>
+          <IdBox>
+          <Dropzone
+          onDrop={files => {
+            addFilesToDropzone(files);
+          }}
+        >
+          {({ getRootProps, getInputProps }) => (
+            <div {...getRootProps()} style={{width: "100%", height: "100%"}}>
+              <input {...getInputProps()} />
+              <div className='ImageBox'>
+                  {
+                    dropzone === undefined ? 
+                    <div className='ImageBoxText'>
+                    <FiDownloadCloud className='Icons'/>
+                   <h4> Drag and drop a file here or click</h4>
+                  </div>
+                  :
+                  <>
+                    {/* {dropzone?.map(file => ( */}
+                  <img
+                    src={dropzone}
+                    // alt={file.path}
+                    style={{ width: "100%", height: "100%" }}
+                  />
+                {/* ))}  */}
+                  </>
+                  }
+              </div>
+            </div>
+          )}
+        </Dropzone>
+          </IdBox>
         <SignupInputs>
+            <SignupEmail placeholder='Fullname' type='text' value={fullName}  onChange ={handleFullnameChange}/>
+            <p style={{marginTop: "-3%", marginLeft: "2%", color: "red", fontSize: "12px"}}>{ffullNameError}</p>
             <SignupEmail placeholder='E-mail' type='email' value={email}  onChange ={handleEmailChange}/>
             <p style={{marginTop: "-3%", marginLeft: "2%", color: "red", fontSize: "12px"}}>{emailError}</p>
             <SignupEmail placeholder='Username' type='text' value={userName}  onChange ={handleUsername}/>
             <p style={{marginTop: "-3%", marginLeft: "2%", color: "red", fontSize: "12px"}}>{usernameError}</p>
+            <SignupEmail placeholder='Phone Number' type='text' value={phoneNumber}  onChange ={handlePhoneNumberChange}/>
+            <p style={{marginTop: "-3%", marginLeft: "2%", color: "red", fontSize: "12px"}}>{phoneNumberError}</p>
+            <SignupEmail placeholder='Address' type='text' value={address}  onChange ={handleAddressChange}/>
+            <p style={{marginTop: "-3%", marginLeft: "2%", color: "red", fontSize: "12px"}}>{addressError}</p>
+            <SignupSelete type='text' value={counrty}  onChange ={handlCounrtyChange}>
+                <option>Your Country</option>
+                <option>1</option>
+                <option>2</option>
+                <option>4</option>
+            </SignupSelete>
+            <p style={{marginTop: "-3%", marginLeft: "2%", color: "red", fontSize: "12px"}}>{counrtyError}</p>
+            {/* <SignupSelete type='text' value={userName}  onChange ={handleUsername}>
+                <option>Your State / Province</option>
+                <option>1</option>
+                <option>2</option>
+                <option>4</option>
+            </SignupSelete>
+            <p style={{marginTop: "-3%", marginLeft: "2%", color: "red", fontSize: "12px"}}>{usernameError}</p> */}
         <PasswordDiv>
         <SignupPassword placeholder='Password' type={show? "password":"text"} value={password}  onChange ={handlePasswordChange}/>
             <AiFillEye className={show? "PasswordShow" : "PasswordHide"} onClick={()=>setShow(!show)}/>
@@ -234,6 +380,8 @@ console.log("p",passwordError, "PE", passwordErrorlow, "Pu", passwordErrorUpper,
             <SymValidation style={{color: `${passwordErrorSymbol ? "white" : "gray"}`, backgroundColor: `${passwordErrorSymbol ? "red" : "#E0E0E5"}`, display: `${passwordErrorSymbol === false ? "none" : "flex"}` }}>Symbol <ValidationImg src="https://cdn.whitebit.com/static/img/ui-kit/24px/info.svg" alt="" /></SymValidation>
             </Tippy>
         </SignupValidation>
+        {/* <SignupEmail placeholder='Your Referrer Code' type='text' value={userName}  onChange ={handleUsername}/>
+            <p style={{marginTop: "-3%", marginLeft: "2%", color: "red", fontSize: "12px"}}>{usernameError}</p> */}
         <SignupRef>
             <SignupRefHeader>
             I have the referral ID <RefImg className={ref?'rot':null} onClick={()=>setRef(!ref)} src='https://cdn.whitebit.com/static/img/ui-kit/24px/chevron.svg' />
