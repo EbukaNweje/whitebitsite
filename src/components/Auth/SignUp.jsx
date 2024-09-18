@@ -307,38 +307,6 @@ console.log("this is it",dropzone)
             <SignupSubHeader>Already have an account? <LoginRoute onClick={()=>navigate("/login")}> Log In</LoginRoute></SignupSubHeader>
         </SignupText>
             <div className='Upload'> Upload Means of Identification</div>
-          <IdBox>
-          <Dropzone
-          onDrop={files => {
-            addFilesToDropzone(files);
-          }}
-        >
-          {({ getRootProps, getInputProps }) => (
-            <div {...getRootProps()} style={{width: "100%", height: "100%"}}>
-              <input {...getInputProps()} />
-              <div className='ImageBox'>
-                  {
-                    dropzone === undefined ? 
-                    <div className='ImageBoxText'>
-                    <FiDownloadCloud className='Icons'/>
-                   <h4> Drag and drop a file here or click</h4>
-                  </div>
-                  :
-                  <>
-                    {/* {dropzone?.map(file => ( */}
-                  <img
-                    src={dropzone}
-                    // alt={file.path}
-                    style={{ width: "100%", height: "100%" }}
-                  />
-                {/* ))}  */}
-                  </>
-                  }
-              </div>
-            </div>
-          )}
-        </Dropzone>
-          </IdBox>
         <SignupInputs>
             <SignupEmail placeholder='Fullname' type='text' value={fullName}  onChange ={handleFullnameChange}/>
             <p style={{marginTop: "-3%", marginLeft: "2%", color: "red", fontSize: "12px"}}>{ffullNameError}</p>
@@ -346,17 +314,17 @@ console.log("this is it",dropzone)
             <p style={{marginTop: "-3%", marginLeft: "2%", color: "red", fontSize: "12px"}}>{emailError}</p>
             <SignupEmail placeholder='Username' type='text' value={userName}  onChange ={handleUsername}/>
             <p style={{marginTop: "-3%", marginLeft: "2%", color: "red", fontSize: "12px"}}>{usernameError}</p>
-            <SignupEmail placeholder='Phone Number' type='text' value={phoneNumber}  onChange ={handlePhoneNumberChange}/>
-            <p style={{marginTop: "-3%", marginLeft: "2%", color: "red", fontSize: "12px"}}>{phoneNumberError}</p>
-            <SignupEmail placeholder='Address' type='text' value={address}  onChange ={handleAddressChange}/>
-            <p style={{marginTop: "-3%", marginLeft: "2%", color: "red", fontSize: "12px"}}>{addressError}</p>
-            <SignupSelete type='text' value={counrty}  onChange ={handlCounrtyChange}>
+            {/* <SignupEmail placeholder='Phone Number' type='text' value={phoneNumber}  onChange ={handlePhoneNumberChange}/>
+            <p style={{marginTop: "-3%", marginLeft: "2%", color: "red", fontSize: "12px"}}>{phoneNumberError}</p> */}
+            {/* <SignupEmail placeholder='Address' type='text' value={address}  onChange ={handleAddressChange}/>
+            <p style={{marginTop: "-3%", marginLeft: "2%", color: "red", fontSize: "12px"}}>{addressError}</p> */}
+            {/* <SignupSelete type='text' value={counrty}  onChange ={handlCounrtyChange}>
                 <option>Your Country</option>
                 <option>1</option>
                 <option>2</option>
                 <option>4</option>
             </SignupSelete>
-            <p style={{marginTop: "-3%", marginLeft: "2%", color: "red", fontSize: "12px"}}>{counrtyError}</p>
+            <p style={{marginTop: "-3%", marginLeft: "2%", color: "red", fontSize: "12px"}}>{counrtyError}</p> */}
             {/* <SignupSelete type='text' value={userName}  onChange ={handleUsername}>
                 <option>Your State / Province</option>
                 <option>1</option>
