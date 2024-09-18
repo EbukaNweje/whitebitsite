@@ -23,7 +23,6 @@ const App = () => {
       <Header/>
       <Routes>
       <Route path='/' element={<Scame/>}/>
-      {/* <Route path='/LandingPage' element={<LandingPage/>}/> */}
       <Route path='/about' element={<About/>}/>
       <Route path='/signup' element={<Signup/>}/>
       <Route path='/login' element={<Login/>}/>
